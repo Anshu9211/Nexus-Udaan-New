@@ -35,7 +35,7 @@ let routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory("/Nexus-Udaan/"),
+  history: createWebHistory("/Nexus-Udaan-New/"),
   routes,
 
   scrollBehavior() {
