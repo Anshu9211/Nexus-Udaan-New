@@ -46,31 +46,6 @@
               </li>
             </ul>
           </li>
-          <li>
-            <router-link to="/games" @click="closeMenu">Our Games</router-link>
-          </li>
-          <li class="nav-item dropdown">
-            <button
-              class="nav-link dropdown-toggle"
-              @click="toggleDropdown('sustainability')">
-              Sustainability<i class="bi bi-chevron-down"></i>
-            </button>
-
-            <ul
-              class="dropdown-menu"
-              :class="{ show: activeDropdown === 'sustainability' }">
-              <li>
-                <router-link to="/environment" @click="closeMenu">Environment</router-link>
-              </li>
-
-              <li>
-                <router-link to="/community" @click="closeMenu">Community</router-link>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <router-link to="/newsroom" @click="closeMenu">Newsroom</router-link>
-          </li>
         </ul>
       </div>
     </nav>
