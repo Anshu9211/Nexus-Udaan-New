@@ -1,0 +1,46 @@
+import { createRouter, createWebHistory } from "vue-router";
+import Home from "../views/Home.vue";
+import CourceDetails from "../views/CourceDetails.vue";
+import AboutUs from "../views/AboutUs.vue";
+import JoinUs from "../views/ContactUs.vue";
+import Programs from "../views/Programs.vue";
+
+let routes = [
+  {
+    path: "/",
+    name: "Home",
+    component: Home,
+  },
+  {
+    path: "/about-us",
+    name: "AboutUs",
+    component: AboutUs,
+  },
+  {
+    path: "/Join-us",
+    name: "contact",
+    component:JoinUs,
+  },
+  {
+    path: "/Different",
+    name: "Careers",
+    component:Programs,
+     
+  }, 
+  {
+    path:"/pro-data",
+    name:"Cource",
+    component:CourceDetails,
+  },
+];
+
+const router = createRouter({
+  history: createWebHistory("/Nexus-Udaan/"),
+  routes,
+
+  scrollBehavior() {
+    return { top: 0 };
+  },
+});
+
+export default router;
