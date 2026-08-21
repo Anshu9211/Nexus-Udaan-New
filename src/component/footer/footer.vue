@@ -22,7 +22,6 @@
             Contact Us
           </button>
         </div>
-
       </div>
     </div>
 
@@ -34,107 +33,76 @@
       v-if="showModal"
       @click.self="showModal = false"
     >
-
       <div class="contact-cardso">
-
         <span
           class="close-btn"
           @click="showModal = false"
         >
           &times;
         </span>
-
         <h2>Contact Us</h2>
-
         <form @submit.prevent="submitForm">
-
           <div class="name-row">
-
             <input
               type="text"
               placeholder="First Name"
               v-model="form.firstName"
               required
             />
-
             <input
               type="text"
               placeholder="Last Name"
               v-model="form.lastName"
               required
             />
-
           </div>
-
           <input
             type="email"
             placeholder="Email Address"
             v-model="form.email"
             required
           />
-
           <input
             type="tel"
             placeholder="Phone Number"
             v-model="form.phone"
             required
           />
-
           <textarea
             placeholder="Enter your message"
             rows="5"
             v-model="form.message"
             required
           ></textarea>
-
           <div class="btn-groupp">
-
             <button
               type="button"
               class="cancel-btn"
               @click="showModal = false"
-            >
-              Cancel
-            </button>
-
+            >Cancel</button>
             <button
               type="submit"
               class="submit-btn"
-            >
-              Submit
-            </button>
-
+            >Submit</button>
           </div>
-
         </form>
-
       </div>
-
     </div>
-
-
     <!-- ================= FOOTER CONTENT ================= -->
 
     <div class="footer-wrapper">
-
-      <!-- ABOUT -->
-
       <div class="footer-about">
-
         <img
           src="../../assest/IMG/logo.svg"
           alt="Nexus Udaan"
           class="footer-main-logo"
         />
-
         <p>
           NexusUdaan is an education platform dedicated to
           transforming careers through industry-focused learning,
           expert mentorship, and placement-driven programs.
         </p>
-
         <div class="social-links">
-
           <a
             href="https://www.instagram.com/nexusudaan17/"
             target="_blank"
@@ -144,7 +112,6 @@
               alt="Instagram"
             />
           </a>
-
           <a
             href="https://www.facebook.com/nexusudaantraining"
             target="_blank"
@@ -154,56 +121,43 @@
               alt="Facebook"
             />
           </a>
-
         </div>
-
       </div>
-
-
       <!-- QUICK LINKS -->
-
       <div class="footer-links">
-
         <h4>Quick Links</h4>
-
         <ul>
-
           <li>
-            <a href="#">Home</a>
+            <router-link to="/" @click="closeMenu">Home</router-link>
           </li>
-
-          <li>
-            <a href="#">Programs</a>
+         <li>
+            <router-link to="/pro-data" target="_blank" @click="closeMenu">
+              Programs
+            </router-link>
           </li>
          <li>
             <router-link to="/about-us"  target="_blank">
               About Us
             </router-link>
           </li>
-              <li>
-                <router-link to="/Join-us" target="_blank" @click="closeMenu">
-                  Privacy Policy
-                </router-link>
-              </li>
-              <li>
-                <router-link to="/Different" target="_blank" @click="closeMenu">
-                  Makes nexusUdaan
-                </router-link>
-              </li>
-
+          <li>
+            <router-link to="/Join-us" target="_blank" @click="closeMenu">
+              Privacy Policy
+            </router-link>
+          </li>
+          <li>
+            <router-link to="/Different" target="_blank" @click="closeMenu">
+              Makes nexusUdaan
+            </router-link>
+          </li>
         </ul>
 
       </div>
 
-
       <!-- PROGRAMS -->
-
       <div class="footer-programs">
-
         <h4>Popular Programs</h4>
-
         <ul>
-
           <li>
             <a
               href="#fullstack"
@@ -212,7 +166,6 @@
               Full Stack Development
             </a>
           </li>
-
           <li>
             <a
               href="#data"
@@ -221,7 +174,6 @@
               Data Analytics
             </a>
           </li>
-
           <li>
             <a
               href="#uiux"
@@ -230,7 +182,6 @@
               UI/UX Design
             </a>
           </li>
-
           <li>
             <a
               href="#ai-ml"
@@ -239,7 +190,6 @@
               AI & Machine Learning
             </a>
           </li>
-
           <li>
             <a
               href="#cloud-devops"
@@ -248,64 +198,42 @@
               Cloud Computing & DevOps
             </a>
           </li>
-
         </ul>
-
       </div>
-
-
       <!-- CONTACT -->
-
       <div class="footer-contact">
-
         <h4>Contact Information</h4>
-
         <div class="contact-item">
           Nexus Tower, Village Jadla,
           P.O. Kakkarhatti (Subathu),
           Solan, Himachal Pradesh – 173206
         </div>
-
         <div class="contact-item">
           +91 XXXXX-XXXXX
         </div>
-
         <div class="contact-item">
           contact@nexusudaan.in
         </div>
-
       </div>
-
     </div>
-
-
     <!-- ================= BOTTOM ================= -->
-
     <div class="footer-bottom">
-
       <p>
         © 2026
         <strong>NexusUdaan</strong>.
         All Rights Reserved.
       </p>
-
       <div>
-
         <a href="#">
           Terms & Conditions
         </a>
-
         <a href="#">
           Privacy Policy
         </a>
-
       </div>
-
     </div>
-
   </div>
 </template>
-
 
 <script>
 export default {
@@ -322,10 +250,10 @@ export default {
     };
   },
   mounted() {
-    const elements = document.querySelectorAll(
+    let elements = document.querySelectorAll(
       ".fade-section, .slide-left, .slide-right"
     );
-    const observer = new IntersectionObserver(
+    let observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -357,7 +285,7 @@ export default {
       };
     },
     selectCourse(course) {
-      const courseElement =
+      let courseElement =
         document.querySelector(
           `[data-course="${course}"]`
         );
@@ -486,19 +414,14 @@ export default {
   font-size: 20px;
   font-weight: 600;
 }
-
-
 /* ==================================================
    LIST
 ================================================== */
-
 .footer ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
-
 .footer li {
   margin-bottom: 12px;
 }
@@ -507,17 +430,13 @@ export default {
   text-decoration: none;
   transition: 0.3s;
 }
-
-
 .footer a:hover {
   color: #D9572C;
   padding-left: 2px;
 }
-
 /* ==================================================
    CONTACT
 ================================================== */
-
 .contact-item {
   margin-bottom: 15px;
   color: #cfd6e3;
@@ -632,32 +551,23 @@ export default {
   margin: 7px 0;
   border: 1px solid #ccc;
   border-radius: 6px;
-
   outline: none;
-
   font-size: 14px;
-
   box-sizing: border-box;
-
 }
 
 
 .contact-cardso textarea {
-
   resize: vertical;
-
 }
 
 
 .contact-cardso input:focus,
 .contact-cardso textarea:focus {
-
   border-color: #007bff;
-
   box-shadow:
     0 0 5px
     rgba(0, 123, 255, 0.3);
-
 }
 
 
@@ -666,65 +576,43 @@ export default {
 ================================================== */
 
 .btn-groupp {
-
   display: flex;
-
   justify-content: center;
-
   gap: 10px;
-
   margin-top: 15px;
-
 }
 
 
 .cancel-btn,
 .submit-btn {
-
   flex: 1;
-
   padding: 10px;
-
   border: none;
-
   border-radius: 6px;
-
   cursor: pointer;
-
   font-size: 14px;
-
 }
 
 
 .cancel-btn {
-
   background: #ccc;
-
   color: #000;
-
 }
 
 
 .cancel-btn:hover {
-
   background: #aaa;
-
 }
 
 
 .submit-btn {
-
   background: green;
-
   color: white;
-
 }
 
 
 .submit-btn:hover {
-
   background: #006400;
-
 }
 
 
@@ -733,46 +621,31 @@ export default {
 ================================================== */
 
 .fade-section {
-
   opacity: 0;
-
   transform: translateY(80px);
-
   transition: all 0.8s ease;
-
 }
 
 
 .slide-left {
-
   opacity: 0;
-
   transform: translateX(-100px);
-
   transition: all 0.8s ease;
-
 }
 
 
 .slide-right {
-
   opacity: 0;
-
   transform: translateX(100px);
-
   transition: all 0.8s ease;
-
 }
 
 
 .fade-section.show,
 .slide-left.show,
 .slide-right.show {
-
   opacity: 1;
-
   transform: none;
-
 }
 
 
@@ -783,32 +656,23 @@ export default {
 @media (max-width: 992px) {
 
   .top-data-footer h2 {
-
     font-size: 36px;
-
   }
 
 
   .top-data-footer h2 span {
-
     font-size: 50px;
-
   }
 
 
   .top-data-footer p {
-
     font-size: 16px;
-
   }
 
 
   .footer-wrapper {
-
     grid-template-columns: 1fr 1fr;
-
     column-gap: 25px;
-
   }
 
 }
@@ -821,66 +685,46 @@ export default {
 @media (max-width: 768px) {
 
   .footer {
-
     padding-top: 30px;
-
   }
 
 
   .top-data-footer {
-
     width: 90%;
-
   }
 
 
   .top-data-footer h2 {
-
     font-size: 30px;
-
   }
 
 
   .top-data-footer h2 span {
-
     font-size: 42px;
-
   }
 
 
   .top-data-footer p {
-
     font-size: 15px;
-
   }
 
 
   .footer-buttons {
-
     flex-direction: column;
-
     gap: 10px;
-
   }
 
 
   .footer-buttons button {
-
     width: 180px;
-
   }
 
 
   .footer-wrapper {
-
     width: 88%;
-
     grid-template-columns: 1fr;
-
     column-gap: 0;
-
     padding: 35px 0;
-
   }
 
 
@@ -888,41 +732,29 @@ export default {
   .footer-links,
   .footer-programs,
   .footer-contact {
-
     text-align: center;
-
   }
 
 
   .footer-main-logo {
-
     width: 170px;
-
   }
 
 
   .social-links {
-
     justify-content: center;
-
   }
 
 
   .footer-bottom {
-
     flex-direction: column;
-
     text-align: center;
-
     padding: 20px;
-
   }
 
 
   .footer-bottom a {
-
     margin: 0 7px;
-
   }
 
 }
@@ -935,130 +767,71 @@ export default {
 @media (max-width: 480px) {
 
   .top-data-footer {
-
     width: 92%;
-
   }
 
 
   .top-data-footer h2 {
-
     font-size: 25px;
-
   }
 
 
   .top-data-footer h2 span {
-
     font-size: 36px;
-
   }
 
 
   .top-data-footer p {
-
     font-size: 14px;
-
   }
-
-
   .footer-wrapper {
-
     width: 90%;
-
   }
-
-
   .footer-main-logo {
-
     width: 150px;
-
   }
-
-
   .footer-about p {
-
     font-size: 13px;
-
   }
-
-
   .footer h4 {
-
     font-size: 18px;
-
   }
-
-
   .footer li a {
-
     font-size: 13px;
-
   }
-
 
   .contact-modalo {
-
     padding: 12px;
-
   }
-
-
   .contact-cardso {
-
     padding: 20px 15px;
-
     max-height: 90vh;
-
   }
-
-
   .contact-cardso h2 {
-
     font-size: 24px;
-
   }
 
 
   .name-row {
-
     grid-template-columns: 1fr;
-
     gap: 0;
-
   }
 
 
   .btn-groupp {
-
     flex-direction: column;
-
     gap: 8px;
-
   }
-
-
   .cancel-btn,
   .submit-btn {
-
     width: 100%;
-
   }
-
-
   .footer-bottom p {
-
     font-size: 12px;
-
   }
-
-
   .footer-bottom a {
-
     font-size: 12px;
-
   }
-
 }
 
 
@@ -1067,48 +840,24 @@ export default {
 ================================================== */
 
 @media (max-width: 360px) {
-
   .top-data-footer h2 {
-
     font-size: 22px;
-
   }
-
-
   .top-data-footer h2 span {
-
     font-size: 30px;
-
   }
-
-
   .top-data-footer p {
-
     font-size: 13px;
-
   }
-
-
   .footer-wrapper {
-
     width: 92%;
-
   }
-
-
   .footer-buttons button {
-
     width: 150px;
-
   }
-
-
   .contact-cardso {
-
     padding: 18px 12px;
-
   }
-
 }
 
 </style>
