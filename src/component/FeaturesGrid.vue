@@ -5,7 +5,6 @@
             <div class="row banner-row align-items-center g-0">
                 <div class="col-lg-6">
                     <div class="banner-data slide-left">
-                
                         <h1 class="banner-title text-white">
                             Who can join <span style="color: #3D93D2;">nexusUdaan</span>?
                         </h1>
@@ -16,14 +15,12 @@
                             <li class="text-white"><strong class="fs-5">School Students:</strong> Classes 10 to 12 (explore early exposure to IT <br>and digital careers)</li>
                             <li class="text-white"><strong class="fs-5">Postgraduates:</strong> MCA, MBA, M.Sc., M.Com., and<br> other relevant fields</li>
                             <li class="text-white"><strong class="fs-5">Graduates:</strong>  BCA, BA, B.Sc., B.Com., BBA</li>
-                            
                         </ul>
                         <div class="banner-subtext text-white">
                         <h6> Whether you're still in school or have completed your degree, our programs are tailored to equip you with real-world skills and industry exposure to succeed in today’s technology-driven world.</h6>
                         </div>
                     </div>
                 </div>
-        
             <div class="col-lg-6"></div>
             </div>
         </div>
@@ -35,25 +32,20 @@
         </div>
     </section>
 </template>
-
 <script>
 import bannerImg from "../assest/IMG/whyDifferentSection.webp";
-
 export default {
   name: "JoinUs",
-
   data() {
     return {
       bannerImg,
     };
   },
-
   mounted() {
-    const elements = document.querySelectorAll(
+    let elements = document.querySelectorAll(
       ".slide-left,.slide-right"
     );
-
-    const observer = new IntersectionObserver(
+    let observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -65,7 +57,6 @@ export default {
         threshold: 0.2,
       }
     );
-
     elements.forEach((el) => observer.observe(el));
   },
 };
@@ -86,10 +77,6 @@ export default {
     background: linear-gradient(195deg, #000000 0%, #071a2e 60%, #0b3d91 100%);
    
   }
-   
- 
- 
- 
   .banner-title
   {
     max-width: 90%;
@@ -117,16 +104,15 @@ export default {
     font-weight: 400;
     &::before
     {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -0px;    
-        height: 100%;
-        width: 4px;
-        background-color: #1692E5;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -0px;    
+      height: 100%;
+      width: 4px;
+      background-color: #1692E5;
     }
   }
-
   .quote-block{
     border-left: 3px solid #14b8a6;
     padding-left: 16px;
@@ -135,8 +121,6 @@ export default {
     line-height: 1.5;
     max-width: 360px;
   }
- 
-  /* Image area with the angled / curved cut shape */
   .image-wrap{
     position: absolute;
     top: 0;
@@ -146,7 +130,6 @@ export default {
     height: 100%;
     min-height: 760px;
   }
- 
   .image-shape{
     position: absolute;
     inset: 0;
@@ -155,8 +138,6 @@ export default {
     background-repeat: no-repeat;
     clip-path:path('M 256 0 L 2000 0 L 2000 1000 L 520 1000 C 360 950, 220 860, 372 720 C 70 600, 40 470, 60 350 C 80 240, 140 146, 211 40 C 221 28, 247 -35, 277 0 Z');
   }
- 
-  /* Fallback simpler clip using percentage polygon-like curve via border-radius trick */
   @supports not (clip-path: path('M0 0')) {
     .image-shape{
       clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 6% 100%, 0% 70%, 0% 35%, 8% 18%);
@@ -166,41 +147,36 @@ export default {
  
 /* BANNER SECTION CODE ENDS  */
 
- 
-
 @media(max-width:1200px)
 {
     .section-title :is(h2, h1)
     {
-        font-size: 32px !important;
+      font-size: 32px !important;
     }
     .banner-title
     {
-        font-size: 38px !important;
+      font-size: 38px !important;
     }
     .banner-text
     {
-        max-width: 85%;
-    }
-    
-    
+      max-width: 85%;
+    } 
 }
 
 @media(max-width:991px)
 {
     .banner-section
     {
-        padding: 30px 15px 40px 15px;
+      padding: 30px 15px 40px 15px;
     }    
     .banner-title, .banner-text, .banner-subtext
     {
-        max-width: 100%;
+      max-width: 100%;
     }
     .banner-title
     {
-        font-size: 35px;
+      font-size: 35px;
     }
-    
     .image-wrap{
       position: relative;
       width: 700px;
@@ -213,14 +189,13 @@ export default {
       position: unset;
       height: 400px;
       background-size: cover;
-    }
-     
+    }  
 }
 @media(max-width:767px)
 {
     .banner-title
     {
-        font-size: 35px !important;
+      font-size: 35px !important;
     }
     .image-wrap{
       position: relative;
@@ -231,33 +206,30 @@ export default {
 {
     .section-title :is(h2, h1)
     {
-        font-size: 28px !important;
+      font-size: 28px !important;
     }
     .banner-section
     {
-        padding: 30px 15px 10px 15px;
+      padding: 30px 15px 10px 15px;
     }
     .banner-title
     {
-        font-size: 28px !important;
+      font-size: 28px !important;
     }
     .banner-text
     {
-        font-size: 17px !important;
+      font-size: 17px !important;
     }
     .image-wrap{
       position: relative;
       width: 100%;
     }
-
     .image-shape
     {
-        height: 200px;
-        border-radius: 10px;
+      height: 200px;
+      border-radius: 10px;
     }
-    
 }
-
 .fade-section {
     opacity: 0;
     transform: translateY(80px);

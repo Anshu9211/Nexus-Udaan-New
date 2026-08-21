@@ -35,7 +35,6 @@
                                         </a>
                                     </div>
                                 </div> 
-                                
                             </div>
                             <div class="col-lg-6">
                                 <div class="about-img slide-right">
@@ -46,7 +45,6 @@
                     </div>
                 </div>
             </div>
-
         </section> 
 </template>
 
@@ -54,11 +52,10 @@
 export default {
   name: "OurStory",
   mounted() {
-    const elements = document.querySelectorAll(
+    let elements = document.querySelectorAll(
       ".fade-section, .slide-left, .slide-right"
     );
-
-    const sectionObserver = new IntersectionObserver(
+    let sectionObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -70,13 +67,11 @@ export default {
         threshold: 0.2,
       }
     );
-
     elements.forEach((el) => sectionObserver.observe(el));
-
-    const card = document.getElementById("mapCard");
+    let card = document.getElementById("mapCard");
     if (!card) return;
     if ("IntersectionObserver" in window) {
-      const io = new IntersectionObserver(
+      let io = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -120,15 +115,12 @@ export default {
 
 }
 .bottom-section .about-img {
-
     width: 100%;
     /* background-color: red; */
 }
 .bottom-section .map-data{
     width: 100%;
     /* background-color: red; */
-
-
 } 
 .demo{ 
     max-width: 560px;

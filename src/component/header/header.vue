@@ -56,7 +56,6 @@
 import logo from "../../assest/IMG/logo.svg";
 export default {
   name: "Header",
-
   data() {
     return {
       logo,
@@ -64,7 +63,6 @@ export default {
       activeDropdown: null,
     };
   },
-
   methods: {
     toggleDropdown(menu) {
       if (this.activeDropdown === menu) {
@@ -73,7 +71,6 @@ export default {
         this.activeDropdown = menu;
       }
     },
-
     closeMenu() {
       this.isMenuOpen = false;
       this.activeDropdown = null;
@@ -81,7 +78,6 @@ export default {
   },
 };
 </script>
-
 <style scoped>
 
 /* =========================
@@ -199,21 +195,16 @@ export default {
   list-style: none;
   background: white;
   border-radius: 10px;
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.12);
+  box-shadow:0 10px 30px rgba(0, 0, 0, 0.12);
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease,
-    visibility 0.25s ease;
+  transition:opacity 0.25s ease,transform 0.25s ease,visibility 0.25s ease;
 }
 
 /* Desktop hover */
 
 @media (min-width: 993px) {
-
   .dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;

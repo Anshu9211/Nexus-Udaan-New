@@ -1933,7 +1933,7 @@ export default {
       document.querySelectorAll(".course-section").forEach(section => {
         section.style.display = "none";
       });
-      const active = document.getElementById(type);
+      let active = document.getElementById(type);
       if (active) {
         active.style.display = "block";
       }
@@ -1942,10 +1942,10 @@ export default {
 
   mounted() {
     // Animation
-    const elements = document.querySelectorAll(
+    let elements = document.querySelectorAll(
       ".fade-section, .slide-left, .slide-right"
     );
-    const observer = new IntersectionObserver(
+    let observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -1970,20 +1970,20 @@ export default {
       "ai-all",
       "comm-all",
     ].forEach((id) => {
-      const el = document.getElementById(id);
+      let el = document.getElementById(id);
       if (el) {
         el.style.display = "block";
       }
     });
     document.querySelectorAll(".view-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
-        const course = btn.dataset.course;
+        let course = btn.dataset.course;
 
         document.querySelectorAll(".info-details").forEach((section) => {
           section.style.display = "none";
         });
 
-        const activeSection = document.getElementById(course);
+        let activeSection = document.getElementById(course);
         if (activeSection) {
           activeSection.style.display = "block";
         }

@@ -14,7 +14,6 @@
                             <div class="about-data">
                                 <h3>Industry Experts as your Instructors</h3>
                                 <p>Learn from experienced developers, analysts, QA engineers, and designers who are actively delivering tech solutions across global markets.</p>
-
                             </div>
                         </div>
                         <div class="col-lg-4 about-col card-3">
@@ -41,7 +40,6 @@
                                 <p>Attend sessions on campus in Subathu or join remotely with access to all tools, mentors, and support materials.</p>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
             </div>
@@ -51,13 +49,11 @@
 <script>
 export default {
   name: "JoinUs",
-
   mounted() {
-    const elements = document.querySelectorAll(
+    let elements = document.querySelectorAll(
       ".fade-section, .slide-left, .slide-right"
     );
-
-    const observer = new IntersectionObserver(
+    let observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -69,7 +65,6 @@ export default {
         threshold: 0.2,
       }
     );
-
     elements.forEach((el) => observer.observe(el));
   },
 };
@@ -77,15 +72,6 @@ export default {
 
 
 <style>
-
-
-
-
-
-
-
-
-
 /* ================================
    SECTION 7: ABOUT US
 ================================ */
@@ -242,7 +228,6 @@ export default {
     transition: 0.3s ease;
 }
 .about-col:hover{
-
     background: linear-gradient(135deg, #000000 0%, #071a2e 60%, #0b3d91 100%);
 }
 

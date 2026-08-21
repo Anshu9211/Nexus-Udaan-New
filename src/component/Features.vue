@@ -60,11 +60,10 @@
 export default {
   name: "Features",
   mounted() {
-    const elements = document.querySelectorAll(
+    let elements = document.querySelectorAll(
       ".fade-section, .slide-left, .slide-right"
     );
-
-    const observer = new IntersectionObserver(
+    let observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -76,7 +75,6 @@ export default {
         threshold: 0.2,
       }
     );
-
     elements.forEach((el) => observer.observe(el));
   },
 };

@@ -67,7 +67,6 @@
 
 <script>
 import { appData } from "../constants/appData";
-
 export default {
   name: "SocialCard",
   data() {
@@ -76,11 +75,10 @@ export default {
     };
   },
   mounted() {
-    const elements = document.querySelectorAll(
+    let elements = document.querySelectorAll(
       ".fade-section, .slide-left, .slide-right"
     );
-
-    const observer = new IntersectionObserver(
+    let observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -92,12 +90,10 @@ export default {
         threshold: 0.2,
       }
     );
-
     elements.forEach((el) => observer.observe(el));
   },
 };
 </script>
-
 
 <style>
 
@@ -191,7 +187,7 @@ html, body {
     display: inline-block;
     padding: 6px 16px;
     /* background: rgba(61, 147, 210, 0.15); */
-      background: linear-gradient(195deg, #000000 20%, #071a2e 50%, #0b3d91 90%);
+        background: linear-gradient(195deg, #000000 20%, #071a2e 50%, #0b3d91 90%);
     color: white;
     border: 1px solid #007bff;
     border-radius: 30px;
