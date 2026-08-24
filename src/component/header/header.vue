@@ -328,11 +328,11 @@ export default {
     padding: 5px 0;
     box-shadow: none;
     border-radius: 8px;
-    background: #f7fafa;
+    /* background: #f7fafa; */
     opacity: 0;
     visibility: hidden;
     transform: none;
-    display: none;
+    /* display: none; */
   }
 
   .dropdown-menu.show {
@@ -374,10 +374,12 @@ export default {
   .navbar-menu {
     top: 70px;
     padding: 12px 18px 20px;
+    color: black;
   }
   .nav-list a,
   .nav-link {
     font-size: 14px;
+    color: black;
   }
 }
 </style>
