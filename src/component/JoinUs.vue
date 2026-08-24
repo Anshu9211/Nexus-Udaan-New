@@ -232,6 +232,76 @@ export default {
 }
 
 /* ================================
+   RESPONSIVE - WHY CHOOSE
+================================ */
+/* ================================
+   TABLET + MOBILE
+   992px AND BELOW
+================================ */
+
+@media (max-width: 992px) {
+
+  .card-1,
+  .card-2,
+  .card-3,
+  .card-4,
+  .card-5 {
+    border-left: none !important;
+    border-right: none !important;
+  }
+
+  /* Only bottom border */
+  .card-1,
+  .card-2,
+  .card-3,
+  .card-4,.card-5 ,.card-6 {
+    border-bottom: 1px solid #2563eb !important;
+  }
+
+ 
+}
+@media (max-width: 768px) {
+
+  .why-choose h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .card-about .about-data {
+    padding: 18px 15px;
+  }
+  /* Remove right borders on mobile */
+  .card-1,
+  .card-2,
+  .card-3,
+  .card-4,
+  .card-5 {
+    border-right: none !important;
+    border-left: none !important;
+  }
+
+  /* Keep only bottom border */
+  .card-1,
+  .card-2,
+  .card-3,
+  .card-4 ,
+  .card-5,.card-6 {
+    border-bottom: 1px solid #2563eb;
+  }
+
+  /* Last card should not have bottom border */
+  .card-5 {
+    border-bottom: none;
+  }
+
+  .about-col {
+    width: 100%;
+  }
+}
+
+ 
+
+/* ================================
    GLOBAL UTILITIES (used across all sections)
 ================================ */
 .fade-section {

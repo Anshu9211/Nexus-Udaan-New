@@ -2244,139 +2244,628 @@ export default {
     background-color: rgba(0, 0, 255, 0.624);
     color: white;
 }
-.info-details{
- 
-    background: linear-gradient(135deg, #93a2c4a3, #2563eb, #14b8a6);
-    border-radius: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-bottom: 40px;
+
+/* =========================================================
+   COURSE DETAILS - GLASSMORPHISM THEME
+========================================================= */
+
+.info-details {
+    display: none;
+    background:radial-gradient(circle at top right,
+            rgba(139, 92, 246, 0.18),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #111827,
+            #172033
+        );
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 20px;
+    padding: 28px;
     margin-top: 15px;
-
+    margin-bottom: 40px;
+    box-shadow:0 20px 50px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
-    /* MAIN SECTION CSS END */
 
-    /* CARDS INSIDE SECTION CSS START */
 
-.main-box-container{
+/* =========================================================
+   COURSE TITLE
+========================================================= */
+
+.card-details .left-side-data {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 12px;
+}
+
+
+/* TITLE */
+
+.card-details .left-side-data h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 0;
+    color: white;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+}
+
+
+/* TITLE ICON */
+
+.card-details .left-side-data h2 i {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #06b6d4
+        );
+    color: white;
+    border-radius: 12px;
+    font-size: 19px;
+    font-style: normal;
+    position: static;
+    padding: 0;
+    box-shadow:0 8px 20px rgba(139, 92, 246, 0.30);
+}
+
+
+/* =========================================================
+   LEVEL BADGE
+========================================================= */
+
+.card-details .left-side-data h6 {
+    flex-shrink: 0;
+    width: fit-content;
+    margin: 0;
+    padding: 6px 14px;
+    border-radius: 20px;
+    color: #67e8f9;
+    background: rgba(6, 182, 212, 0.10);
+    border: 1px solid rgba(6, 182, 212, 0.30);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.card-details > p {
+    padding-left: 56px;
+    color: #aeb9ca;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-top: 12px;
+    margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   PRICE BOX
+========================================================= */
+
+.right-data {
+    padding: 22px 20px;
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(12px);
+    box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+
+/* PRICE */
+
+.right-data h4 {
+    color: white;
+    font-size: 27px;
+    font-weight: 700;
+    margin-bottom: 20px !important;
+}
+
+
+.right-data h4 .text-muted {
+    color: #718096 !important;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   APPLY BUTTON
+========================================================= */
+
+.right-data button {
+    padding: 11px 30px;
+    border-radius: 10px;
+    border: none;
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #06b6d4
+        );
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.25);
+}
+
+
+.right-data button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(6, 182, 212, 0.30);
+}
+
+
+/* =========================================================
+   INFORMATION CARDS
+========================================================= */
+
+.main-box-container {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
     margin-top: 20px;
 }
 
-.card-content{
+
+.card-content {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 12px 15px;
-    border: 1px solid #062230;
-    border-radius: 10px;
+    gap: 12px;
+    min-width: 170px;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 13px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
 }
 
-.card-content .data{
+
+.card-content:hover {
+    transform: translateY(-4px);
+    background: rgba(139, 92, 246, 0.08);
+    border-color: rgba(139, 92, 246, 0.35);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.20);
+}
+
+
+/* =========================================================
+   INFORMATION ICON
+========================================================= */
+
+.card-content .icone {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    background: rgba(139, 92, 246, 0.12);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+}
+
+
+.card-content .icone i {
+    color: #a78bfa;
+    font-size: 19px;
+}
+
+
+/* =========================================================
+   INFORMATION DATA
+========================================================= */
+
+.card-content .data {
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex: 1;
+    min-width: 0;
 }
 
-.card-content .data h5{
-    margin: 0;
-    font-size: 18px;
-    font-weight: bold;
-}
 
-.card-content .data p{
+.card-content .data h5 {
     margin: 0;
-    font-size: 13px;
     color: white;
-    text-align: start;
-    padding-left: 0px;
-    /* background-color: red; */
+    font-size: 16px;
+    font-weight: 700;
+}
 
+
+.card-content .data p {
+    margin: 3px 0 0;
+    padding-left: 0;
+    color: #8c9ab0;
+    font-size: 12px;
+    text-align: left;
 }
-.card-content .data{
-    text-align: center;
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.info-detail {
+    margin-top: 28px;
 }
-.course-modules{
-    border: 1px solid black;
-    border-radius: 10px;
-    /* background-color: red; */
+
+
+.course-section > h6 {
+    color: white !important;
+    font-size: 22px !important;
+    font-weight: 700;
+    margin-bottom: 18px;
+    padding-left: 14px;
+    border-left: 4px solid #8b5cf6;
+}
+
+
+/* =========================================================
+   MODULE CARDS
+========================================================= */
+
+.course-modules {
     height: 100%;
+    padding: 20px !important;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
 }
-.course-modules h5{
+
+
+.course-modules:hover {
+    transform: translateY(-4px);
+    background: rgba(139, 92, 246, 0.06);
+    border-color: rgba(139, 92, 246, 0.35);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+/* MODULE TITLE */
+
+.course-modules h5 {
     color: white;
-    font-size: 19px;
-        
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
+
+
+/* MODULE TEXT */
+
+.Modules-info h6 {
+    color: #aeb9ca;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   CHECK ICON
+========================================================= */
+
+.Modules-info .bi-check-circle-fill {
+    color: #06b6d4 !important;
+    margin-right: 5px;
+}
+
+
+/* =========================================================
+   LIST
+========================================================= */
+
 .Modules-info ul {
-    /* list-style: none; */
-    padding: 0px 0px 0px 20px;
+    padding-left: 18px;
+    margin: 0;
+}
 
-}
-.Modules-info ul li{
-    font-size: 16px;  
-    color: #062230;
-    font-weight: 500;
-}
-    /* CARDS INSIDE SECTION CSS END */
 
-    /* MONTH CSS START */
-.course-section {
-    display: none;
+.Modules-info ul li {
+    color: #aeb9ca;
+    font-size: 14px;
+    line-height: 1.8;
+    font-weight: 400;
 }
-.info-details{
-    display: none;
+
+
+.Modules-info ul li::marker {
+    color: #06b6d4;
 }
+
+
+/* =========================================================
+   MONTH SECTION
+========================================================= */
+
 .commn {
-    background: linear-gradient(165deg, #0d2c3b, #317478d9);
-    padding: 20px 10px;
-    border-radius: 10px;
-    border: 1px solid #062230;
+    background: rgba(255, 255, 255, 0.035);
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     display: flex;
-    /* justify-content: ; */
     align-items: center;
-    gap: 15px;
+    justify-content: flex-start;
+    gap: 10px;
     flex-wrap: wrap;
-
+    margin-bottom: 20px !important;
 }
+
+
+/* =========================================================
+   MONTH BUTTON
+========================================================= */
 
 .commn button {
-    padding: 10px 20px;
-    border: none;
+    background: transparent;
+    color: #aeb9ca;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 8px 24px;
     border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-@media (max-width: 576px) {
-   
-    .commn button {
-        padding: 8px 14px;
+
+.commn button:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #06b6d4
+        );
+    color: white;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow:0 6px 15px rgba(139, 92, 246, 0.25);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 992px) {
+    .info-details {
+        padding: 20px;
+    }
+
+    .card-details .left-side-data {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap !important;
+        gap: 8px;
+    }
+
+
+    .card-details .left-side-data h2 {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex: 1;
+        min-width: 0;
+        font-size: 22px;
+    }
+
+
+    .card-details .left-side-data h2 i {
+        width: 38px;
+        height: 38px;
+        flex-shrink: 0;
+        font-size: 16px;
+    }
+
+
+    .card-details .left-side-data h6 {
+        flex-shrink: 0;
+        margin: 0 !important;
+        padding: 5px 9px;
+        font-size: 9px;
+        white-space: nowrap;
+    }
+
+
+    .card-details > p {
+        padding-left: 0;
         font-size: 14px;
+    }
+
+
+    .card-content {
+        flex: 1 1 45%;
+    }
+
+
+    .right-data {
+        margin-top: 20px;
     }
 }
 
 
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
+    .info-details {
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    /* TITLE ROW */
+
+    .card-details .left-side-data {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap !important;
+        gap: 6px;
+    }
 
 
+    /* COURSE TITLE */
 
-.commn button{
-    background-color:transparent ;
-    color: white;
-    border: none;
-    padding: 8px 30px;
-    border-radius: 10px;
-    border: 1px solid #2563eb;
-    font-size: 15px;
-    font-weight: 600;
-    transition: 0.3s ease-in;
+    .card-details .left-side-data h2 {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        flex: 1;
+        min-width: 0;
+        font-size: 18px;
+        line-height: 1.2;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+
+    /* TITLE ICON */
+
+    .card-details .left-side-data h2 i {
+        width: 34px;
+        height: 34px;
+        flex-shrink: 0;
+        font-size: 14px;
+        border-radius: 50%;
+    }
+    /* BEGINNER BADGE */
+    .card-details .left-side-data h6 {
+        flex-shrink: 0;
+        width: auto;
+        margin: 0 !important;
+        padding: 5px 7px;
+        font-size: 7px;
+        line-height: 1;
+        white-space: nowrap;
+    }
+
+    /* DESCRIPTION */
+    .card-details > p {
+        padding-left: 0;
+        font-size: 12px;
+        line-height: 1.6;
+        margin-top: 10px;
+        margin-bottom: 18px;
+    }
+    /* INFORMATION CARDS */
+    .card-content {
+        width: 100%;
+        flex: 1 1 100%;
+        min-width: 0;
+        padding: 12px 14px;
+    }
+    .card-content .icone {
+        width: 38px;
+        height: 38px;
+    }
+    .card-content .data h5 {
+        font-size: 14px;
+    }
+    .card-content .data p {
+        font-size: 11px;
+    }
+    /* PRICE */
+    .right-data h4 {
+        font-size: 23px;
+    }
+    .right-data button {
+        width: 100%;
+    }
+    /* SECTION TITLE */
+    .course-section > h6 {
+        font-size: 19px !important;
+        padding-left: 10px;
+    }
+    /* MODULE */
+    .course-modules h5 {
+        font-size: 16px;
+    }
+    .Modules-info h6,
+    .Modules-info ul li {
+        font-size: 13px;
+    }
+    /* MONTH */
+    .commn {
+        gap: 8px;
+        padding: 12px;
+    }
+    .commn button {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
 }
-.commn button:hover{
-    background: linear-gradient(135deg, #93a2c4a3, #2563eb, #09423c);
 
-}
-    /* MONTH CSS END */
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+@media (max-width: 380px) {
+    .info-details {
+        padding: 12px;
+    }
+    .card-details .left-side-data {
+        gap: 4px;
+    }
+
+    .card-details .left-side-data h2 {
+        gap: 5px;
+        font-size: 15px;
+    }
+    .card-details .left-side-data h2 i {
+        width: 29px;
+        height: 29px;
+        font-size: 12px;
+    }
+
+    .card-details .left-side-data h6 {
+        padding: 4px 6px;
+        font-size: 6.5px;
+    }
+    .card-details > p {
+        font-size: 11px;
+    }
+    .commn button {
+        padding: 7px 10px;
+        font-size: 12px;
+    }
+}    /* MONTH CSS END */
 
   
 .Road-map{

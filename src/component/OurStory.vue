@@ -193,33 +193,116 @@ export default {
 
  }
 
-.nu-fields{
-    display:grid;
+.nu-fields {
+    display: grid;
     grid-template-columns: repeat(4, 1fr);
+    width: 100%;
     border-top: 2px solid white;
     border-bottom: 1px solid white;
     margin-bottom: 56px;
 }
-.nu-field{
+
+.nu-field {
+    min-width: 0;
     padding: 18px 24px;
     border-right: 1px solid white;
+    border-bottom: 1px solid white;
 }
-.nu-field:last-child{ border-right: none; }.nu-field-label{
-    display:block;
-    font-family:'IBM Plex Mono', monospace;
+.nu-field:last-child {
+    border-right: none;
+}
+.nu-field-label {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 14px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: #3D93D2;
     margin-bottom: 6px;
-    font-weight: bold;
+    font-weight: 700;
 }
-.nu-field-value{
-    display:block;
-    font-family:'Space Grotesk', sans-serif;
+
+.nu-field-value {
+    display: block;
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
     font-size: 19px;
     color: white;
+    line-height: 1.3;
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .nu-fields {
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+    }
+    .nu-field {
+        padding: 18px 20px;
+        text-align: center;
+        border-right: 1px solid white;
+        border-bottom: 1px solid white;
+    }
+    .nu-field:nth-child(2n) {
+        border-right: none;
+    }
+    .nu-field-label,
+    .nu-field-value {
+        text-align: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .nu-fields {
+        display: grid;
+        grid-template-columns: 1fr !important;
+        width: 100%;
+        margin-bottom: 35px;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+    }
+    .nu-field {
+        width: 100%;
+        min-width: 0;
+        padding: 15px 16px;
+        text-align: center;
+        border-right: none !important;
+        border-bottom: 1px solid white !important;
+    }
+    .nu-field:last-child {
+        border-right: none !important;
+        border-bottom: 1px solid white !important;
+    }
+    .nu-field-label,
+    .nu-field-value {
+        text-align: center;
+    }
+    .nu-field-label {
+        font-size: 10px;
+        margin-bottom: 5px;
+        letter-spacing: 0.07em;
+    }
+    .nu-field-value {
+        font-size: 14px;
+        line-height: 1.4;
+        white-space: normal;
+        overflow-wrap: break-word;
+    }
+}
+
+@media (max-width: 380px) {
+    .nu-fields {
+        margin-bottom: 30px;
+    }
+    .nu-field {
+        padding: 13px 12px;
+    }
+    .nu-field-label {
+        font-size: 9px;
+        margin-bottom: 4px;
+    }
+    .nu-field-value {
+        font-size: 13px;
+    }
 }
 .fade-section.show,
 .slide-left.show,
