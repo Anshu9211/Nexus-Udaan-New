@@ -28,11 +28,6 @@ let routes = [
      
   },
   {
-    path:"/pro-data",
-    name:"Course",
-    component:CourceDetails
-  },
-  {
     path: "/pro-data/:course",
     name: "Course",
     component: CourceDetails,
