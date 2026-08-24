@@ -1,78 +1,180 @@
 <template>
   <header class="header">
     <nav class="navbar">
-      <router-link to="/" class="navbar-brand">
+
+      <!-- LOGO -->
+      <router-link to="/" class="navbar-brand" @click="closeMenu">
         <img :src="logo" alt="Nexus Udaan Logo" />
       </router-link>
+
+      <!-- HAMBURGER -->
       <button
         class="menu-toggle"
         @click="isMenuOpen = !isMenuOpen"
-        aria-label="Toggle navigation"><i :class="isMenuOpen ? 'bi bi-x-lg' : 'bi bi-list'"></i>
+        aria-label="Toggle navigation"
+      >
+        <i :class="isMenuOpen ? 'bi bi-x-lg' : 'bi bi-list'"></i>
       </button>
-      <div class="navbar-menu"
-        :class="{ 'menu-open': isMenuOpen }">
+
+      <!-- NAVIGATION -->
+      <div
+        class="navbar-menu"
+        :class="{ 'menu-open': isMenuOpen }"
+      >
         <ul class="nav-list">
+
+          <!-- HOME -->
           <li>
-            <router-link to="/" @click="closeMenu">Home</router-link>
+            <router-link to="/" @click="closeMenu">
+              Home
+            </router-link>
           </li>
+
+          <!-- OUR COMPANY -->
           <li class="nav-item dropdown">
+
             <button
               class="nav-link dropdown-toggle"
-              @click="toggleDropdown('company')">
-              Our Company <i class="bi bi-chevron-down"></i>
+              @click="toggleDropdown('company')"
+            >
+              Our Company
+              <i
+                class="bi"
+                :class="
+                  activeDropdown === 'company'
+                    ? 'bi-chevron-up'
+                    : 'bi-chevron-down'
+                "
+              ></i>
             </button>
+
             <ul
               class="dropdown-menu"
-              :class="{ show: activeDropdown === 'company' }">
+              :class="{ show: activeDropdown === 'company' }"
+            >
+
+              <!-- ABOUT US -->
               <li>
-                <router-link to="/about-us" target="_blank" @click="closeMenu">
+                <router-link
+                  to="/about-us"
+                  @click="closeMenu"
+                >
                   About Us
                 </router-link>
               </li>
+
+              <!-- PRIVACY POLICY -->
               <li>
-                <router-link to="/Join-us" target="_blank" @click="closeMenu">
+                <router-link
+                  to="/Join-us"
+                  @click="closeMenu"
+                >
                   Privacy Policy
                 </router-link>
               </li>
+
+              <!-- MAKES NEXUS UDAAN -->
               <li>
-                <router-link to="/Different" target="_blank" @click="closeMenu">
+                <router-link
+                  to="/Different"
+                  @click="closeMenu"
+                >
                   Makes nexusUdaan
                 </router-link>
               </li>
+
+              <!-- PROGRAMS -->
               <li class="pro-menu">
-                <router-link @click="closeMenu">
+
+                <button
+                  class="programs-button"
+                  @click.stop="toggleDropdown('programs')"
+                >
                   Programs
-                </router-link>
-                <ul class="pro-dropdwon">
+
+                  <i
+                    class="bi"
+                    :class="
+                      activeDropdown === 'programs'
+                        ? 'bi-chevron-left'
+                        : 'bi-chevron-right'
+                    "
+                  ></i>
+                </button>
+
+                <!-- PROGRAM SUBMENU -->
+                <ul
+                  class="pro-dropdown"
+                  :class="{
+                    show: activeDropdown === 'programs'
+                  }"
+                >
+
                   <li>
-                    <router-link to="/pro-data/fullstack">Full Stack Development</router-link>
+                    <router-link
+                      to="/pro-data/fullstack"
+                      @click="closeMenu"
+                    >
+                      Full Stack Development
+                    </router-link>
                   </li>
+
                   <li>
-                    <router-link to="/pro-data/data">Data Analytics</router-link>
+                    <router-link
+                      to="/pro-data/data"
+                      @click="closeMenu"
+                    >
+                      Data Analytics
+                    </router-link>
                   </li>
+
                   <li>
-                    <router-link to="/pro-data/uiux">UI/UX Design</router-link>
+                    <router-link
+                      to="/pro-data/uiux"
+                      @click="closeMenu"
+                    >
+                      UI/UX Design
+                    </router-link>
                   </li>
+
                   <li>
-                    <router-link to="/pro-data/ai-ml">AI & Machine Learning</router-link>
+                    <router-link
+                      to="/pro-data/ai-ml"
+                      @click="closeMenu"
+                    >
+                      AI & Machine Learning
+                    </router-link>
                   </li>
+
                   <li>
-                    <router-link to="/pro-data/cloud-devops">Cloud Computing & DevOps</router-link>
+                    <router-link
+                      to="/pro-data/cloud-devops"
+                      @click="closeMenu"
+                    >
+                      Cloud Computing & DevOps
+                    </router-link>
                   </li>
+
                 </ul>
               </li>
+
             </ul>
           </li>
+
         </ul>
       </div>
+
     </nav>
   </header>
 </template>
 
+
 <script>
 import logo from "../../assest/IMG/logo.svg";
+
 export default {
   name: "Header",
+
   data() {
     return {
       logo,
@@ -80,6 +182,7 @@ export default {
       activeDropdown: null,
     };
   },
+
   methods: {
     toggleDropdown(menu) {
       if (this.activeDropdown === menu) {
@@ -88,6 +191,7 @@ export default {
         this.activeDropdown = menu;
       }
     },
+
     closeMenu() {
       this.isMenuOpen = false;
       this.activeDropdown = null;
@@ -95,6 +199,8 @@ export default {
   },
 };
 </script>
+
+
 <style scoped>
 
 /* =========================
@@ -113,6 +219,7 @@ export default {
     #0d4778 75%,
     #1261a0 100%
   );
+
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
 }
 
@@ -125,6 +232,7 @@ export default {
   width: 100%;
   min-height: 75px;
   padding: 0 5%;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -161,9 +269,15 @@ export default {
   display: flex;
   align-items: center;
   gap: 5px;
+
   margin: 0;
   padding: 0;
+
   list-style: none;
+}
+
+.nav-list > li {
+  position: relative;
 }
 
 
@@ -171,150 +285,86 @@ export default {
    NAV LINKS
 ========================= */
 
-.nav-list > li {
-  position: relative;
-}
-
 .nav-list a,
-.nav-link {
+.nav-link,
+.programs-button {
   border: none;
   background: transparent;
+
   padding: 12px 15px;
+
   color: #ffffff;
+
   font-size: 15px;
   font-weight: 600;
+
   text-decoration: none;
+
   display: flex;
   align-items: center;
   gap: 7px;
+
   cursor: pointer;
+
   transition:
     color 0.3s ease,
-    background 0.3s ease,
-    transform 0.3s ease;
+    background 0.3s ease;
 }
 
-
-/* Hover */
-
 .nav-list a:hover,
-.nav-link:hover {
+.nav-link:hover,
+.programs-button:hover {
   color: #5ee7f7;
 }
 
 
 /* =========================
-   DROPDOWN ARROW
+   ARROWS
 ========================= */
 
-.dropdown-toggle i {
-  font-size: 12px;
-  transition: transform 0.3s ease;
-}
-
-.dropdown:hover .dropdown-toggle i {
-  transform: rotate(180deg);
-}
-
-
-/* Remove default arrow */
-
-.dropdown-toggle::after {
-  display: none;
+.dropdown-toggle i,
+.programs-button i {
+  font-size: 11px;
 }
 
 
 /* =========================
-   DROPDOWN
+   COMPANY DROPDOWN
 ========================= */
 
 .dropdown-menu {
   position: absolute;
+
   top: calc(100% + 8px);
-  left: 0;
+  right: 0;
+  left: auto;
+
   min-width: 210px;
+
   margin: 0;
   padding: 8px 0;
+
   list-style: none;
-  background: white;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 10px;
-  box-shadow:0 12px 35px rgba(0, 0, 0, 0.15);
+
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+
   opacity: 0;
   visibility: hidden;
+
   transform: translateY(10px);
+
   transition:
     opacity 0.25s ease,
     transform 0.25s ease,
     visibility 0.25s ease;
 }
-.pro-menu{
-  position: relative;
-}
-.pro-dropdwon{
-  visibility: hidden;
-}
-.pro-menu:hover .pro-dropdwon{
-  visibility: visible;
-}
-.pro-menu ul{
-  position: absolute;
-  top: 0;
-  right: 100%;
-  background-color: white;
-  min-width: 210px;
-  list-style: none;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 0px;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 10px;
-  padding: 8px 0;
-  box-shadow:0 12px 35px rgba(0, 0, 0, 0.15);
-  
-}
-@media (max-width: 768px) {
-  .pro-dropdwon {
-    width: 100%;
-    min-width: 0;
-    margin-left: 0;
-    padding: 5px 0;
-    box-sizing: border-box;
-  }
-
-  .pro-dropdwon li {
-    width: 100%;
-  }
-
-  .pro-dropdwon li a {
-    display: block;
-    width: 100%;
-    padding: 10px 15px;
-    box-sizing: border-box;
-    white-space: normal;
-  }
-}
-
-@media (max-width: 576px) {
-  .pro-dropdwon {
-    width: 100%;
-    margin-left: 0;
-    padding: 0;
-  }
-
-  .pro-dropdwon li a {
-    padding: 10px 15px;
-    font-size: 14px;
-    white-space: normal;
-    word-break: break-word;
-  }
-}
- 
 
 
-
-/* Desktop dropdown */
+/* DESKTOP SHOW */
 
 @media (min-width: 993px) {
 
@@ -323,6 +373,7 @@ export default {
     visibility: visible;
     transform: translateY(0);
   }
+
 }
 
 
@@ -334,24 +385,82 @@ export default {
   width: 100%;
 }
 
-.dropdown-menu a {
+.dropdown-menu a,
+.programs-button {
   width: 100%;
   box-sizing: border-box;
+
   padding: 11px 18px;
+
   color: #243b53;
+
   font-size: 14px;
+
   border-radius: 6px;
-  transition:
-    background 0.25s ease,
-    color 0.25s ease;
+}
+
+.dropdown-menu a:hover,
+.programs-button:hover {
+  background: #eef9fb;
+  color: #007f86;
 }
 
 
-/* Dropdown hover */
+/* =========================
+   PROGRAMS
+========================= */
 
-.dropdown-menu a:hover {
-  background: #eef9fb;
-  color: #007f86;
+.pro-menu {
+  position: relative;
+}
+
+
+/* PROGRAM SUBMENU */
+
+.pro-dropdown {
+  position: absolute;
+
+  top: 0;
+
+  /* IMPORTANT:
+     submenu right side mein open hoga */
+  left: 100%;
+
+  min-width: 230px;
+
+  margin: 0;
+  padding: 8px 0;
+
+  list-style: none;
+
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateX(10px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s ease;
+}
+
+
+/* DESKTOP PROGRAMS */
+
+@media (min-width: 993px) {
+
+  .pro-menu:hover > .pro-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
 }
 
 
@@ -361,14 +470,15 @@ export default {
 
 .menu-toggle {
   display: none;
+
   border: none;
   background: transparent;
+
   font-size: 28px;
+
   color: white;
+
   cursor: pointer;
-  transition:
-    color 0.3s ease,
-    transform 0.3s ease;
 }
 
 .menu-toggle:hover {
@@ -381,15 +491,18 @@ export default {
 ========================= */
 
 @media (max-width: 1100px) {
+
   .navbar {
     padding: 0 3%;
   }
 
   .nav-list a,
-  .nav-link {
+  .nav-link,
+  .programs-button {
     padding: 10px 10px;
     font-size: 14px;
   }
+
 }
 
 
@@ -398,115 +511,112 @@ export default {
 ========================= */
 
 @media (max-width: 992px) {
+
   .navbar {
     min-height: 70px;
     padding: 0 25px;
   }
-  /* Logo */
+
   .navbar-brand img {
     height: 42px;
   }
-  /* Hamburger */
+
   .menu-toggle {
     display: block;
     z-index: 1100;
   }
-  /* Mobile menu */
+
+
+  /* MOBILE MENU */
 
   .navbar-menu {
     position: absolute;
+
     top: 70px;
     left: 0;
+
     width: 100%;
+
     padding: 15px 25px 25px;
+
     box-sizing: border-box;
-    background: white;
-    box-shadow:0 10px 25px rgba(0, 0, 0, 0.12);
+
+    background: #ffffff;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+
     display: none;
   }
-
-
-  /* Open menu */
 
   .navbar-menu.menu-open {
     display: block;
   }
 
 
-  /* Mobile nav list */
+  /* MOBILE LIST */
 
   .nav-list {
     width: 100%;
+
     flex-direction: column;
     align-items: stretch;
+
     gap: 3px;
   }
-
 
   .nav-list > li {
     width: 100%;
   }
 
 
-  /* Mobile links */
+  /* MOBILE LINKS */
 
   .nav-list a,
-  .nav-link {
+  .nav-link,
+  .programs-button {
     width: 100%;
+
     box-sizing: border-box;
+
     justify-content: space-between;
+
     padding: 14px 12px;
+
     border-radius: 8px;
+
     color: #102a43;
   }
 
 
-  /* Mobile hover */
-
-  .nav-list a:hover,
-  .nav-link:hover {
-    color: #007f86;
-    background: #eef9fb;
-  }
-
-
-  /* =========================
-     MOBILE DROPDOWN
-  ========================= */
+  /* MOBILE COMPANY DROPDOWN */
 
   .dropdown-menu {
     position: static;
+
     width: 100%;
     min-width: 0;
+
     padding: 5px 0;
+
     box-shadow: none;
+
     border-radius: 8px;
+
     background: #f8fbfc;
+
     opacity: 0;
     visibility: hidden;
+
     transform: none;
+
+    display: none;
   }
-
-
-  /* Open dropdown */
 
   .dropdown-menu.show {
     display: block;
+
     opacity: 1;
     visibility: visible;
-  }
-
-
-  /* Dropdown links */
-  .dropdown-menu a {
-    padding: 11px 25px;
-    color: #34495e;
-  }
-
-
-  .dropdown-menu a:hover {
-    background: #e8f7f9;
-    color: #007f86;
   }
 
 
@@ -518,14 +628,83 @@ export default {
     display: none;
   }
 
-
-  /* Show clicked dropdown */
-
   .dropdown .dropdown-menu.show {
     opacity: 1;
     visibility: visible;
     display: block;
   }
+
+
+  /* MOBILE DROPDOWN LINKS */
+
+  .dropdown-menu a,
+  .programs-button {
+    padding: 11px 25px;
+
+    color: #34495e;
+  }
+
+
+  /* =========================
+     MOBILE PROGRAM SUBMENU
+  ========================= */
+
+  .pro-dropdown {
+    position: static;
+
+    width: 100%;
+    min-width: 0;
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    background: #edf5f7;
+
+    border-radius: 8px;
+
+    box-shadow: none;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: none;
+
+    display: none;
+  }
+
+  .pro-dropdown.show {
+    display: block;
+
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .pro-menu:hover > .pro-dropdown {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
+
+  .pro-menu > .pro-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    display: block;
+  }
+
+  .pro-dropdown a {
+    width: 100%;
+
+    padding: 10px 40px;
+
+    font-size: 14px;
+
+    white-space: normal;
+
+    box-sizing: border-box;
+  }
+
 }
 
 
@@ -540,62 +719,34 @@ export default {
     padding: 0 18px;
   }
 
-
-  /* Logo */
-
   .navbar-brand img {
     height: 38px;
   }
 
-
-  /* Hamburger */
-
   .menu-toggle {
     font-size: 26px;
-    color: #ffffff;
   }
-
-
-  /* Mobile menu */
 
   .navbar-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
+    top: 65px;
+
     padding: 12px 18px 20px;
-    background: white;
-    z-index: 999;
-    height: auto;
-    min-height: 0;
-    box-shadow:0 10px 25px rgba(0, 0, 0, 0.12);
   }
-
-
-  /* Mobile links */
 
   .nav-list a,
-  .nav-link {
+  .nav-link,
+  .programs-button {
     font-size: 14px;
-    color: #102a43;
   }
 
+  .pro-dropdown a {
+    padding: 10px 35px;
 
-  .nav-list a:hover,
-  .nav-link:hover {
-    color: #007f86;
-    background: #eef9fb;
+    font-size: 14px;
+
+    word-break: break-word;
   }
 
-
-  /* Dropdown */
-
-  .dropdown-menu {
-    background: #f8fbfc;
-  }
-  .dropdown-menu a {
-    color: #34495e;
-  }
 }
 
 </style>
