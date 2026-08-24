@@ -150,6 +150,8 @@ html, body {
 
 .ews-img-wrap:hover img {
     transform: scale(1.02);
+    border: 1px solid #1e88e5;
+    box-shadow: 0 10px 55px rgba(30, 136, 229, 0.25);
 }
 
 .ews-img-glow {

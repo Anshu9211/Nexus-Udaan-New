@@ -78,8 +78,7 @@
             <button
               type="button"
               class="cancel-btn"
-              @click="showModal = false"
-            >Cancel</button>
+              @click="showModal = false">Cancel</button>
             <button
               type="submit"
               class="submit-btn"
@@ -555,13 +554,9 @@ export default {
   font-size: 14px;
   box-sizing: border-box;
 }
-
-
 .contact-cardso textarea {
   resize: vertical;
 }
-
-
 .contact-cardso input:focus,
 .contact-cardso textarea:focus {
   border-color: #007bff;
@@ -569,7 +564,6 @@ export default {
     0 0 5px
     rgba(0, 123, 255, 0.3);
 }
-
 
 /* ==================================================
    FORM BUTTONS
@@ -581,8 +575,6 @@ export default {
   gap: 10px;
   margin-top: 15px;
 }
-
-
 .cancel-btn,
 .submit-btn {
   flex: 1;
@@ -592,195 +584,130 @@ export default {
   cursor: pointer;
   font-size: 14px;
 }
-
-
 .cancel-btn {
   background: #ccc;
   color: #000;
 }
-
-
 .cancel-btn:hover {
   background: #aaa;
 }
-
-
 .submit-btn {
   background: green;
   color: white;
 }
-
-
 .submit-btn:hover {
   background: #006400;
 }
-
-
 /* ==================================================
    SCROLL ANIMATION
 ================================================== */
-
 .fade-section {
   opacity: 0;
   transform: translateY(80px);
   transition: all 0.8s ease;
 }
-
-
 .slide-left {
   opacity: 0;
   transform: translateX(-100px);
   transition: all 0.8s ease;
 }
-
-
 .slide-right {
   opacity: 0;
   transform: translateX(100px);
   transition: all 0.8s ease;
 }
-
-
 .fade-section.show,
 .slide-left.show,
 .slide-right.show {
   opacity: 1;
   transform: none;
 }
-
-
 /* ==================================================
    TABLET
 ================================================== */
-
 @media (max-width: 992px) {
-
   .top-data-footer h2 {
     font-size: 36px;
   }
-
-
   .top-data-footer h2 span {
     font-size: 50px;
   }
-
-
   .top-data-footer p {
     font-size: 16px;
   }
-
-
   .footer-wrapper {
     grid-template-columns: 1fr 1fr;
     column-gap: 25px;
   }
-
 }
-
 
 /* ==================================================
    MOBILE
 ================================================== */
 
 @media (max-width: 768px) {
-
   .footer {
     padding-top: 30px;
   }
-
-
   .top-data-footer {
     width: 90%;
   }
-
-
   .top-data-footer h2 {
     font-size: 30px;
   }
-
-
   .top-data-footer h2 span {
     font-size: 42px;
   }
-
-
   .top-data-footer p {
     font-size: 15px;
   }
-
-
   .footer-buttons {
     flex-direction: column;
     gap: 10px;
   }
-
-
   .footer-buttons button {
     width: 180px;
   }
-
-
   .footer-wrapper {
     width: 88%;
     grid-template-columns: 1fr;
     column-gap: 0;
     padding: 35px 0;
   }
-
-
   .footer-about,
   .footer-links,
   .footer-programs,
   .footer-contact {
     text-align: center;
   }
-
-
   .footer-main-logo {
     width: 170px;
   }
-
-
   .social-links {
     justify-content: center;
   }
-
-
   .footer-bottom {
     flex-direction: column;
     text-align: center;
     padding: 20px;
   }
-
-
   .footer-bottom a {
     margin: 0 7px;
   }
-
 }
-
-
 /* ==================================================
    SMALL MOBILE
 ================================================== */
-
 @media (max-width: 480px) {
-
   .top-data-footer {
     width: 92%;
   }
-
-
   .top-data-footer h2 {
     font-size: 25px;
   }
-
-
   .top-data-footer h2 span {
     font-size: 36px;
   }
-
-
   .top-data-footer p {
     font-size: 14px;
   }

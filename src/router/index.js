@@ -33,11 +33,9 @@ let routes = [
     component:CourceDetails,
   },
 ];
-
 const router = createRouter({
  history: createWebHistory("/Nexus-Udaan-New/"),
   routes,
-
   scrollBehavior() {
     return { top: 0 };
   },

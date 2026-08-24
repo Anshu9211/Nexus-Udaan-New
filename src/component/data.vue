@@ -1,1 +1,0 @@
-   <!-- this.$emit('sendMap', this.sendMapClick);  -->use emit this style

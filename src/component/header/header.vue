@@ -88,7 +88,7 @@ export default {
   width: 100%;
   position: relative;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.95);
+  background:linear-gradient(125deg,#000000 0%, #071a2e 40%, #0b3d91 70%);
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
 }
 
@@ -152,7 +152,7 @@ export default {
   border: none;
   background: transparent;
   padding: 12px 15px;
-  color: #222;
+  color: white;
   font-size: 15px;
   font-weight: 600;
   text-decoration: none;
@@ -165,7 +165,7 @@ export default {
 
 .nav-list a:hover,
 .nav-link:hover {
-  color: #007f86;
+  color:black;
 }
 
 /* =========================
@@ -200,6 +200,9 @@ export default {
   visibility: hidden;
   transform: translateY(10px);
   transition:opacity 0.25s ease,transform 0.25s ease,visibility 0.25s ease;
+}
+.dropdown-toggle::after{
+  display: none;
 }
 
 /* Desktop hover */
