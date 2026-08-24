@@ -39,10 +39,27 @@
                   Makes nexusUdaan
                 </router-link>
               </li>
-              <li>
-                <router-link to="/pro-data" target="_blank" @click="closeMenu">
+              <li class="pro-menu">
+                <router-link @click="closeMenu">
                   Programs
                 </router-link>
+                <ul class="pro-dropdwon">
+                  <li>
+                    <router-link to="/pro-data/fullstack">Full Stack Development</router-link>
+                  </li>
+                  <li>
+                    <router-link to="/pro-data/data">Data Analytics</router-link>
+                  </li>
+                  <li>
+                    <router-link to="/pro-data/uiux">UI/UX Design</router-link>
+                  </li>
+                  <li>
+                    <router-link to="/pro-data/ai-ml">AI & Machine Learning</router-link>
+                  </li>
+                  <li>
+                    <router-link to="/pro-data/cloud-devops">Cloud Computing & DevOps</router-link>
+                  </li>
+                </ul>
               </li>
             </ul>
           </li>
@@ -96,7 +113,6 @@ export default {
     #0d4778 75%,
     #1261a0 100%
   );
-
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
 }
 
@@ -109,7 +125,6 @@ export default {
   width: 100%;
   min-height: 75px;
   padding: 0 5%;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -146,10 +161,8 @@ export default {
   display: flex;
   align-items: center;
   gap: 5px;
-
   margin: 0;
   padding: 0;
-
   list-style: none;
 }
 
@@ -166,22 +179,15 @@ export default {
 .nav-link {
   border: none;
   background: transparent;
-
   padding: 12px 15px;
-
   color: #ffffff;
-
   font-size: 15px;
   font-weight: 600;
-
   text-decoration: none;
-
   display: flex;
   align-items: center;
   gap: 7px;
-
   cursor: pointer;
-
   transition:
     color 0.3s ease,
     background 0.3s ease,
@@ -203,7 +209,6 @@ export default {
 
 .dropdown-toggle i {
   font-size: 12px;
-
   transition: transform 0.3s ease;
 }
 
@@ -225,34 +230,88 @@ export default {
 
 .dropdown-menu {
   position: absolute;
-
   top: calc(100% + 8px);
   left: 0;
-
   min-width: 210px;
-
   margin: 0;
   padding: 8px 0;
-
   list-style: none;
-
-  background: #ffffff;
-
-  border-radius: 10px;
-
-  box-shadow:
-    0 12px 35px rgba(0, 0, 0, 0.15);
-
+  background: white;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 10px;
+  box-shadow:0 12px 35px rgba(0, 0, 0, 0.15);
   opacity: 0;
   visibility: hidden;
-
   transform: translateY(10px);
-
   transition:
     opacity 0.25s ease,
     transform 0.25s ease,
     visibility 0.25s ease;
 }
+.pro-menu{
+  position: relative;
+}
+.pro-dropdwon{
+  visibility: hidden;
+}
+.pro-menu:hover .pro-dropdwon{
+  visibility: visible;
+}
+.pro-menu ul{
+  position: absolute;
+  top: 0;
+  right: 100%;
+  background-color: white;
+  min-width: 210px;
+  list-style: none;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 10px;
+  padding: 8px 0;
+  box-shadow:0 12px 35px rgba(0, 0, 0, 0.15);
+  
+}
+@media (max-width: 768px) {
+  .pro-dropdwon {
+    width: 100%;
+    min-width: 0;
+    margin-left: 0;
+    padding: 5px 0;
+    box-sizing: border-box;
+  }
+
+  .pro-dropdwon li {
+    width: 100%;
+  }
+
+  .pro-dropdwon li a {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 576px) {
+  .pro-dropdwon {
+    width: 100%;
+    margin-left: 0;
+    padding: 0;
+  }
+
+  .pro-dropdwon li a {
+    padding: 10px 15px;
+    font-size: 14px;
+    white-space: normal;
+    word-break: break-word;
+  }
+}
+ 
+
 
 
 /* Desktop dropdown */
@@ -262,7 +321,6 @@ export default {
   .dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
-
     transform: translateY(0);
   }
 }
@@ -278,17 +336,11 @@ export default {
 
 .dropdown-menu a {
   width: 100%;
-
   box-sizing: border-box;
-
   padding: 11px 18px;
-
   color: #243b53;
-
   font-size: 14px;
-
   border-radius: 6px;
-
   transition:
     background 0.25s ease,
     color 0.25s ease;
@@ -309,16 +361,11 @@ export default {
 
 .menu-toggle {
   display: none;
-
   border: none;
   background: transparent;
-
   font-size: 28px;
-
-  color: #ffffff;
-
+  color: white;
   cursor: pointer;
-
   transition:
     color 0.3s ease,
     transform 0.3s ease;
@@ -334,7 +381,6 @@ export default {
 ========================= */
 
 @media (max-width: 1100px) {
-
   .navbar {
     padding: 0 3%;
   }
@@ -352,47 +398,30 @@ export default {
 ========================= */
 
 @media (max-width: 992px) {
-
   .navbar {
     min-height: 70px;
     padding: 0 25px;
   }
-
-
   /* Logo */
-
   .navbar-brand img {
     height: 42px;
   }
-
-
   /* Hamburger */
-
   .menu-toggle {
     display: block;
     z-index: 1100;
   }
-
-
   /* Mobile menu */
 
   .navbar-menu {
     position: absolute;
-
     top: 70px;
     left: 0;
-
     width: 100%;
-
     padding: 15px 25px 25px;
-
     box-sizing: border-box;
-
-    background: #ffffff;
-
-    box-shadow:
-      0 10px 25px rgba(0, 0, 0, 0.12);
-
+    background: white;
+    box-shadow:0 10px 25px rgba(0, 0, 0, 0.12);
     display: none;
   }
 
@@ -408,10 +437,8 @@ export default {
 
   .nav-list {
     width: 100%;
-
     flex-direction: column;
     align-items: stretch;
-
     gap: 3px;
   }
 
@@ -426,15 +453,10 @@ export default {
   .nav-list a,
   .nav-link {
     width: 100%;
-
     box-sizing: border-box;
-
     justify-content: space-between;
-
     padding: 14px 12px;
-
     border-radius: 8px;
-
     color: #102a43;
   }
 
@@ -444,7 +466,6 @@ export default {
   .nav-list a:hover,
   .nav-link:hover {
     color: #007f86;
-
     background: #eef9fb;
   }
 
@@ -455,21 +476,14 @@ export default {
 
   .dropdown-menu {
     position: static;
-
     width: 100%;
     min-width: 0;
-
     padding: 5px 0;
-
     box-shadow: none;
-
     border-radius: 8px;
-
     background: #f8fbfc;
-
     opacity: 0;
     visibility: hidden;
-
     transform: none;
   }
 
@@ -478,24 +492,20 @@ export default {
 
   .dropdown-menu.show {
     display: block;
-
     opacity: 1;
     visibility: visible;
   }
 
 
   /* Dropdown links */
-
   .dropdown-menu a {
     padding: 11px 25px;
-
     color: #34495e;
   }
 
 
   .dropdown-menu a:hover {
     background: #e8f7f9;
-
     color: #007f86;
   }
 
@@ -505,7 +515,6 @@ export default {
   .dropdown:hover .dropdown-menu {
     opacity: 0;
     visibility: hidden;
-
     display: none;
   }
 
@@ -515,7 +524,6 @@ export default {
   .dropdown .dropdown-menu.show {
     opacity: 1;
     visibility: visible;
-
     display: block;
   }
 }
@@ -529,7 +537,6 @@ export default {
 
   .navbar {
     min-height: 65px;
-
     padding: 0 18px;
   }
 
@@ -545,7 +552,6 @@ export default {
 
   .menu-toggle {
     font-size: 26px;
-
     color: #ffffff;
   }
 
@@ -554,22 +560,15 @@ export default {
 
   .navbar-menu {
     position: absolute;
-
     top: 100%;
     left: 0;
     right: 0;
-
     padding: 12px 18px 20px;
-
-    background: #ffffff;
-
+    background: white;
     z-index: 999;
-
     height: auto;
     min-height: 0;
-
-    box-shadow:
-      0 10px 25px rgba(0, 0, 0, 0.12);
+    box-shadow:0 10px 25px rgba(0, 0, 0, 0.12);
   }
 
 
@@ -578,7 +577,6 @@ export default {
   .nav-list a,
   .nav-link {
     font-size: 14px;
-
     color: #102a43;
   }
 
@@ -586,7 +584,6 @@ export default {
   .nav-list a:hover,
   .nav-link:hover {
     color: #007f86;
-
     background: #eef9fb;
   }
 
@@ -596,7 +593,6 @@ export default {
   .dropdown-menu {
     background: #f8fbfc;
   }
-
   .dropdown-menu a {
     color: #34495e;
   }

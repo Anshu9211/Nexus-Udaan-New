@@ -26,12 +26,17 @@ let routes = [
     name: "Careers",
     component:Programs,
      
-  }, 
+  },
   {
     path:"/pro-data",
-    name:"Cource",
-    component:CourceDetails,
+    name:"Course",
+    component:CourceDetails
   },
+  {
+    path: "/pro-data/:course",
+    name: "Course",
+    component: CourceDetails,
+  }
 ];
 const router = createRouter({
  history: createWebHistory("/Nexus-Udaan-New/"),

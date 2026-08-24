@@ -157,46 +157,21 @@
       <div class="footer-programs">
         <h4>Popular Programs</h4>
         <ul>
-          <li>
-            <a
-              href="#fullstack"
-              @click.prevent="selectCourse('fullstack')"
-            >
-              Full Stack Development
-            </a>
-          </li>
-          <li>
-            <a
-              href="#data"
-              @click.prevent="selectCourse('data')"
-            >
-              Data Analytics
-            </a>
-          </li>
-          <li>
-            <a
-              href="#uiux"
-              @click.prevent="selectCourse('uiux')"
-            >
-              UI/UX Design
-            </a>
-          </li>
-          <li>
-            <a
-              href="#ai-ml"
-              @click.prevent="selectCourse('ai-ml')"
-            >
-              AI & Machine Learning
-            </a>
-          </li>
-          <li>
-            <a
-              href="#cloud-devops"
-              @click.prevent="selectCourse('cloud-devops')"
-            >
-              Cloud Computing & DevOps
-            </a>
-          </li>
+         <li>
+          <router-link to="/pro-data/fullstack">Full Stack Development</router-link>
+        </li>
+        <li>
+          <router-link to="/pro-data/data">Data Analytics</router-link>
+        </li>
+        <li>
+          <router-link to="/pro-data/uiux">UI/UX Design</router-link>
+        </li>
+        <li>
+          <router-link to="/pro-data/ai-ml">AI & Machine Learning</router-link>
+        </li>
+        <li>
+          <router-link to="/pro-data/cloud-devops">Cloud Computing & DevOps</router-link>
+        </li>
         </ul>
       </div>
       <!-- CONTACT -->
