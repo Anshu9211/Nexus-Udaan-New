@@ -1,5 +1,5 @@
 <template>
-      <section class="makes py-5 " id="Different">
+      <section class="makes pb-5" id="Different">
             <div class="container-fluid">
                 <div class=" text-center make-udaan py-5">
                     <h1 class="text-white display-5">What Makes <span style="color: #3D93D2;">nexusUdaan</span> Different?</h1>

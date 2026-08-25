@@ -1,5 +1,5 @@
  <template>
-    <section id="program">
+    <section id="program ">
         <div class="banner fade-section">
             <h1>Upcoming <span>Courses</span></h1>
             <p class="days">Monday to Saturday</p>
@@ -96,7 +96,7 @@
                 <!-- ALL -->
                 <div class="course-section" id="basic-all">
                     <h6 class="text-white mt-2 fs-4">What you'll Learn (All Modules)</h6>
-                    <div class="row">
+                    <div class="row row-gap-4">
                         <div class="col-lg-3 ">
                             <div class="course-modules px-3 py-3">
                                 <h5>Computer Basics</h5>
@@ -279,7 +279,7 @@
                 <!-- ALL -->
                 <div class="course-section" id="fullstack-all">
                     <h6 class="text-white mt-2 fs-4">What you'll Learn (All Modules)</h6>
-                    <div class="row">
+                    <div class="row row-gap-4">
                         <div class="col-lg-3 ">
                             <div class="course-modules px-3 py-3">
                                 <h5 >Frontend Development</h5>
@@ -1006,7 +1006,7 @@
                 <!-- ALL -->
                 <div class="course-section" id="ba-all">
                     <h6 class="text-white mt-2 fs-4">What you'll Learn (All Modules)</h6>
-                    <div class="row">
+                    <div class="row row-gap-4">
                         <div class="col-lg-3 ">
                             <div class="course-modules px-3 py-3">
                                 <h5>Business Analysis Basics</h5>
@@ -1189,7 +1189,7 @@
                 <!-- ALL -->
                 <div class="course-section" id="cloud-all">
                     <h6 class="text-white mt-2 fs-4">What you'll Learn (All Modules)</h6>
-                    <div class="row">
+                    <div class="row row-gap-4">
                         <div class="col-lg-3 ">
                             <div class="course-modules px-3 py-3">
                                 <h5>Cloud Fundamentals</h5>
@@ -1369,7 +1369,7 @@
                 <!-- ALL -->
                 <div class="course-section" id="mob-all">
                     <h6 class="text-white mt-2 fs-4">What you'll Learn (All Modules)</h6>
-                    <div class="row">
+                    <div class="row row-gap-4">
                         <div class="col-lg-3 ">
                             <div class="course-modules px-3 py-3">
                                 <h5>Mobile Dev Basics</h5>
@@ -1549,7 +1549,7 @@
                 <!-- ALL -->
                 <div class="course-section" id="ai-all">
                     <h6 class="text-white mt-2 fs-4">What you'll Learn (All Modules)</h6>
-                    <div class="row">
+                    <div class="row row-gap-4">
                         <div class="col-lg-3 ">
                             <div class="course-modules px-3 py-3">
                                 <h5>Python for AI</h5>
@@ -1729,7 +1729,7 @@
                 <!-- ALL -->
                 <div class="course-section" id="comm-all">
                     <h6 class="text-white mt-2 fs-4">What you'll Learn (All Modules)</h6>
-                    <div class="row">
+                    <div class="row row-gap-4">
                         <div class="col-lg-3 ">
                             <div class="course-modules px-3 py-3">
                                 <h5>Communication Basics</h5>
@@ -1846,10 +1846,10 @@
         <!-- ALL END CARD -->
 
         <!-- BUIL UP START -->
-        <section class="journey-section fade-section">
+        <section class="journey-section fade-section mt-1 mb-2">
             <div class="journey-container">
                 <h5 class="journey-title">Your Journey With Us</h5>
-                <div class="journey-grid">
+                <div class="journey-grid mb-2">
                 <!-- ENROLL -->
                 <div class="journey-item">
                     <div class="journey-step">
@@ -2833,39 +2833,7 @@ export default {
     }
 }
 
-/* =========================================================
-   VERY SMALL MOBILE
-========================================================= */
-@media (max-width: 380px) {
-    .info-details {
-        padding: 12px;
-    }
-    .card-details .left-side-data {
-        gap: 4px;
-    }
-
-    .card-details .left-side-data h2 {
-        gap: 5px;
-        font-size: 15px;
-    }
-    .card-details .left-side-data h2 i {
-        width: 29px;
-        height: 29px;
-        font-size: 12px;
-    }
-
-    .card-details .left-side-data h6 {
-        padding: 4px 6px;
-        font-size: 6.5px;
-    }
-    .card-details > p {
-        font-size: 11px;
-    }
-    .commn button {
-        padding: 7px 10px;
-        font-size: 12px;
-    }
-}    /* MONTH CSS END */
+   /* MONTH CSS END */
 
   
 .Road-map{

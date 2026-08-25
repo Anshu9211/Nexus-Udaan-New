@@ -29,9 +29,10 @@
     <!-- ================= CONTACT MODAL ================= -->
 
     <div
-      class="contact-modalo"
-      v-if="showModal"
-      @click.self="showModal = false"
+    id="contact-mod"
+    class="contact-modalo"
+    v-if="showModal"
+    @click.self="showModal = false"
     >
       <div class="contact-cardso">
         <span
@@ -128,11 +129,6 @@
         <ul>
           <li>
             <router-link to="/" @click="closeMenu">Home</router-link>
-          </li>
-         <li>
-            <router-link to="/pro-data" target="_blank" @click="closeMenu">
-              Programs
-            </router-link>
           </li>
          <li>
             <router-link to="/about-us"  target="_blank">

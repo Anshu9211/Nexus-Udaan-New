@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <Header />
-    <router-view />
+     <main class="page-content">
+      <router-view />
+    </main>
     <Footer />
   </div>
 </template>
@@ -31,7 +33,23 @@ body,
 #app {
   width: 100%;
   overflow-x: hidden;
-  background: #111;
+  background: black;
   font-family: Arial, Helvetica, sans-serif;
+  
+}
+.page-content {
+  padding-top: 80px;
+}
+
+@media (max-width: 992px) {
+  .page-content {
+    padding-top: 75px;
+  }
+}
+
+@media (max-width: 576px) {
+  .page-content {
+    padding-top: 70px;
+  }
 }
 </style>

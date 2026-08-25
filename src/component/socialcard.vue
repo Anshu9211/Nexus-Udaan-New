@@ -1,7 +1,7 @@
 <template>
-    <section class="ews-initiative py-5" style="background-color: #0d0d0d;">
+    <section class="ews-initiative mt-4 " >
         <div class="container">
-            <div class="row align-items-center g-5">
+            <div class="row align-items-center g-3">
                 <!-- IMAGE SIDE -->
                 <div class="col-lg-6">
                     <div class="ews-img-wrap position-relative slide-left">
@@ -17,7 +17,7 @@
                 <!-- TEXT SIDE -->
                 <div class="col-lg-6 slide-right">
                     <span class="badge-tag mb-3">Our Social Initiative</span>
-                    <h2 class="text-white mb-4">
+                    <h2 class="text-white mb-2">
                         Bridging the Gap for <span style="color:#3D93D2;">Meritorious Students</span>
                     </h2>
                     <p class="text-white ews-para">
@@ -189,7 +189,7 @@ html, body {
     display: inline-block;
     padding: 6px 16px;
     /* background: rgba(61, 147, 210, 0.15); */
-        background: linear-gradient(195deg, #000000 20%, #071a2e 50%, #0b3d91 90%);
+    background: linear-gradient(195deg, #000000 20%, #071a2e 50%, #0b3d91 90%);
     color: white;
     border: 1px solid #007bff;
     border-radius: 30px;
@@ -272,5 +272,6 @@ html, body {
         font-size: 0.75rem;
         padding: 6px 12px;
     }
+ 
 }
 </style>

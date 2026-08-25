@@ -32,14 +32,21 @@
             <router-link
               to="/"
               @click="closeMenu"
-            >Home</router-link>
+            > <i class="bi bi-house-door-fill"></i>Home</router-link>
+          </li>
+          <li>
+            <router-link
+               to="/contact-us"
+               target="_blank"
+              @click="closeMenu"
+            > <i class="bi bi-images"></i>Gallery</router-link>
           </li>
           <li class="nav-item dropdown">
             <button
               type="button"
               class="nav-link dropdown-toggle"
               @click="toggleDropdown('company')"
-            ><span>Our Company</span>
+            > <i class="bi bi-building"></i><span>Our Company</span>
               <i
                 class="bi"
                 :class="
@@ -58,8 +65,7 @@
                 <router-link
                   to="/about-us"
                   @click="closeMenu"
-                >
-                  About Us
+                >About Us
                 </router-link>
               </li>
               <li>
@@ -143,8 +149,6 @@
                       UI/UX Design
                     </router-link>
                   </li>
-
-
                   <!-- AI ML -->
 
                   <li>
@@ -167,9 +171,7 @@
                       Cloud Computing & DevOps
                     </router-link>
                   </li>
-
                 </ul>
-
               </li>
             </ul>
           </li>
@@ -217,9 +219,7 @@ export default {
 
 <style scoped>
 .header {
-  width: 100%;
-  position: relative;
-  z-index: 1000;
+  /* position: relative; */
   background: linear-gradient(
     120deg,
     #06121f 0%,
@@ -227,8 +227,13 @@ export default {
     #0d4778 75%,
     #1261a0 100%
   );
-
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2px 0;
+  z-index: 69;
 }
 .navbar {
   width: 100%;
@@ -393,7 +398,7 @@ export default {
 .programs-button {
   width: 100%;
   box-sizing: border-box;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   padding: 11px 18px;
   color: #243b53;
   font-size: 14px;
@@ -579,7 +584,7 @@ export default {
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     padding: 14px 12px;
     border-radius: 8px;
     color: #102a43;
@@ -756,55 +761,37 @@ export default {
     min-height: 68px;
     padding: 0 20px;
   }
-
-
   .navbar-brand img {
     height: 40px;
   }
-
-
   .navbar-menu {
     top: 68px;
     padding: 12px 20px 22px;
   }
-
-
   .nav-list {
     gap: 2px;
   }
-
-
   .nav-list a,
   .nav-link,
   .programs-button {
     font-size: 14px;
     padding: 13px 12px;
   }
-
-
   .dropdown-menu {
     padding: 4px 0;
   }
-
-
   .dropdown-menu > li > a {
     padding: 10px 22px;
     font-size: 14px;
   }
-
-
   .pro-menu .programs-button {
     padding: 10px 22px;
   }
-
-
   .pro-dropdown li a {
     padding: 10px 35px;
     font-size: 14px;
   }
-
 }
-
 
 /* =========================================================
    576px
@@ -815,63 +802,43 @@ export default {
     min-height: 65px;
     padding: 0 18px;
   }
-
-
   .navbar-brand img {
     height: 38px;
   }
-
-
   .menu-toggle {
     font-size: 26px;
   }
-
-
   .navbar-menu {
     top: 65px;
     left: 0;
     width: 100%;
     padding: 12px 18px 20px;
   }
-
-
   .nav-list a,
   .nav-link,
   .programs-button {
     font-size: 14px;
     padding: 12px 10px;
   }
-
-
   /* COMPANY */
   .dropdown-menu {
     padding: 3px 0;
     border-radius: 7px;
   }
-
-
   .dropdown-menu > li > a {
     padding: 10px 18px;
     font-size: 13px;
   }
-
-
   /* PROGRAM BUTTON */
-
   .pro-menu .programs-button {
     padding: 10px 18px;
     font-size: 13px;
   }
-
-
   /* PROGRAM SUBMENU */
-
   .pro-dropdown {
     width: 100% !important;
     border-radius: 7px;
   }
-
-
   .pro-dropdown li a {
     padding: 9px 30px;
     font-size: 13px;

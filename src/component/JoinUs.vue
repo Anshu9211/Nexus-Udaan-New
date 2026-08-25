@@ -1,5 +1,5 @@
 <template>
-      <section class="card-about py-5  fade-section " id="Join-us" style="background-color: #111111; ">
+      <section class="card-about pt-3 pb-5  fade-section " id="Join-us" style="background-color: #111111; ">
             <div class="container-fluid">
                 <div class="container why-choose">
                     <h1 class="text-center text-white pt-3 pb-5 display-5 " >Why Choose <span style="color: #3D93D2;">nexusUdaan</span> ?</h1>
@@ -241,6 +241,10 @@ export default {
 
 @media (max-width: 992px) {
 
+    .card-about{
+       
+        padding-top: 0px !important;
+    }
   .card-1,
   .card-2,
   .card-3,
@@ -249,15 +253,15 @@ export default {
     border-left: none !important;
     border-right: none !important;
   }
-
-  /* Only bottom border */
   .card-1,
   .card-2,
   .card-3,
   .card-4,.card-5 ,.card-6 {
     border-bottom: 1px solid #2563eb !important;
   }
-
+    .why-choose h1{
+        padding-bottom: 10px !important;
+    }
  
 }
 @media (max-width: 768px) {
@@ -265,10 +269,17 @@ export default {
   .why-choose h1 {
     font-size: 24px;
     text-align: center;
+    /* background-color: green; */
+    padding-bottom: 0 !important;
   }
+   .card-about{
+       
+        padding-top: 0px !important;
+    }
 
   .card-about .about-data {
     padding: 18px 15px;
+    
   }
   /* Remove right borders on mobile */
   .card-1,
