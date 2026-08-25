@@ -190,7 +190,7 @@
     <div class="footer-bottom">
       <p>
         © 2026
-        <strong>NexusUdaan</strong>.
+        <strong>nexusUdaan</strong>.
         All Rights Reserved.
       </p>
       <div>

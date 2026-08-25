@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Slider/>
     <SocialCard />
     <Features />
     <FeaturesGrid />
@@ -16,6 +17,7 @@ import FeaturesGrid from "../component/FeaturesGrid.vue";
 import OurStory from "../component/OurStory.vue";
 import JoinUs from "../component/JoinUs.vue";
 import SocialCard from "../component/socialcard.vue";
+import Slider from "../component/slider/slider.vue"
 
 export default {
   name: "Home",
@@ -26,6 +28,7 @@ export default {
     OurStory,
     JoinUs,
     SocialCard,
+    Slider
   },
   methods: {
     handleMapClick() {

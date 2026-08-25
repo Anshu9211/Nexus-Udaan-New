@@ -232,7 +232,6 @@ export default {
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
-  
     .nu-fields {
         grid-template-columns: repeat(2, 1fr);
         width: 100%;
