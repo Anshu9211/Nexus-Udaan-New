@@ -4,6 +4,7 @@ import CourceDetails from "../views/CourceDetails.vue";
 import AboutUs from "../views/AboutUs.vue";
 import JoinUs from "../views/ContactUs.vue";
 import Programs from "../views/Programs.vue";
+import Gallery from "../views/gall.vue";
 
 let routes = [
   {
@@ -31,6 +32,11 @@ let routes = [
     path: "/pro-data/:course",
     name: "Course",
     component: CourceDetails,
+  },
+  {
+    path: "/gallery",
+    name: "Course",
+    component: Gallery,
   }
 ];
 const router = createRouter({

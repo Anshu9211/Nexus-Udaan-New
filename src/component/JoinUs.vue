@@ -265,9 +265,11 @@ export default {
  
 }
 @media (max-width: 768px) {
-
+    .why-choose{
+        padding-bottom: 0px;
+    }
   .why-choose h1 {
-    font-size: 24px;
+    font-size: 22px;
     text-align: center;
     /* background-color: green; */
     padding-bottom: 0 !important;

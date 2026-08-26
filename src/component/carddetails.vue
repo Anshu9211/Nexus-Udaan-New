@@ -3049,7 +3049,7 @@ export default {
 
 @media (max-width: 576px) {
     .journey-section {
-        padding: 40px 0;
+        padding: 10px 0;
     }
     .journey-container {
         width: 94%;

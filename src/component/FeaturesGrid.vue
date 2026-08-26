@@ -197,6 +197,9 @@ export default {
     {
       font-size: 35px !important;
     }
+     .banner-data ul{
+      padding-left: 1rem !important;
+    }
     .image-wrap{
       position: relative;
       width: 500px;
@@ -220,6 +223,9 @@ export default {
     {
       font-size: 17px !important;
     }
+    .banner-data ul{
+      padding-left: 1rem !important;
+    } 
     .image-wrap{
       position: relative;
       width: 100%;

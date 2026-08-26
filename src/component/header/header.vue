@@ -36,7 +36,7 @@
           </li>
           <li>
             <router-link
-               to="/contact-us"
+               to="/gallery"
                target="_blank"
               @click="closeMenu"
             > <i class="bi bi-images"></i>Gallery</router-link>
@@ -85,7 +85,6 @@
                 </router-link>
               </li>
               <li class="pro-menu">
-
                 <button
                   type="button"
                   class="programs-button"
@@ -94,29 +93,22 @@
                   "
                 >
                   <span>Programs</span>
-
                   <i
                     class="bi"
                     :class="
                       programsOpen
                         ? 'bi-chevron-up'
                         : 'bi-chevron-down'
-                    "
-                  ></i>
+                    "></i>
                 </button>
-
-
                 <!-- PROGRAM SUBMENU -->
-
                 <ul
                   class="pro-dropdown"
                   :class="{
                     show: programsOpen
                   }"
                 >
-
                   <!-- FULL STACK -->
-
                   <li>
                     <router-link
                       to="/pro-data/fullstack"
@@ -125,10 +117,7 @@
                       Full Stack Development
                     </router-link>
                   </li>
-
-
                   <!-- DATA ANALYTICS -->
-
                   <li>
                     <router-link
                       to="/pro-data/data"
@@ -137,10 +126,7 @@
                       Data Analytics
                     </router-link>
                   </li>
-
-
                   <!-- UI UX -->
-
                   <li>
                     <router-link
                       to="/pro-data/uiux"
@@ -150,7 +136,6 @@
                     </router-link>
                   </li>
                   <!-- AI ML -->
-
                   <li>
                     <router-link
                       to="/pro-data/ai-ml"
@@ -159,10 +144,6 @@
                       AI & Machine Learning
                     </router-link>
                   </li>
-
-
-                  <!-- CLOUD DEVOPS -->
-
                   <li>
                     <router-link
                       to="/pro-data/cloud-devops"

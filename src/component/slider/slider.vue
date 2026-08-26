@@ -394,7 +394,7 @@ onBeforeUnmount(() => {
 
 @media (max-width: 480px) {
   .hero-slider {
-    height: 720px;
+    max-height: auto;
   }
   .slide-content {
     padding-top: 55px;
@@ -408,6 +408,17 @@ onBeforeUnmount(() => {
   }
   .small-title {
     font-size: 12px;
+  }
+   .slider-arrow {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+  }
+  .prev {
+    left: 2px;
+  }
+  .next {
+    right: 2px;
   }
 }
 
