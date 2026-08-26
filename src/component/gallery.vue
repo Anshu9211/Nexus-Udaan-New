@@ -3,13 +3,12 @@
     <div class="gallery-container">
 
       <!-- Heading -->
-      <div class="gallery-heading">
-        <img src="../assest//IMG/logo.svg">
-        <!-- <span class="small-title">nexusUdaan</span> -->
+      <div class="gallery-heading ">
+        <img src="../assest//IMG/logo.svg" class="fade-section">
         <h1>Our <span>Gallery</span></h1>
         <p>
-          Explore moments, activities, workshops and events from
-          the <span style="font-size: 35px; color: #3D93D2;">nexusUdaan</span> journey.
+          Explore memorable moments, student achievements, learning experiences, and inspiring events at
+          <span style="font-size: 35px; color: #3D93D2;" class="slide-right ">nexusUdaan</span>
         </p>
       </div>
 
@@ -268,7 +267,25 @@ export default {
   },
   beforeUnmount() {
     document.body.style.overflow = "";
-  }
+  },
+   mounted() {
+    let elements = document.querySelectorAll(
+      ".fade-section, .slide-left, .slide-right"
+    );
+    let observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+      }
+    );
+    elements.forEach((el) => observer.observe(el));
+  },
 };
 </script>
 <style scoped>
@@ -325,8 +342,10 @@ export default {
 .gallery-heading p {
   margin-top: 15px;
   color: white;
-  font-size: 17px;
-  line-height: 1.7;
+  font-size: 14px;
+  /* line-height: 1.7; */
+  /* background-color: red; */
+  white-space: nowrap;
 }
 
 
@@ -643,5 +662,28 @@ export default {
     font-size: 13px;
   }
 }
+.fade-section {
+    opacity: 0;
+    transform: translateY(80px);
+    transition: all 0.8s ease;
+}
+.slide-left {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 0.8s ease;
+}
+.slide-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.8s ease;
+    display: inline-block;
+}
+.fade-section.show,
+.slide-left.show,
+.slide-right.show {
+    opacity: 1;
+    transform: none;
+}
+
 
 </style>
