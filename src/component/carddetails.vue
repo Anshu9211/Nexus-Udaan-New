@@ -2,13 +2,13 @@
     <section id="program ">
         <div class="banner fade-section">
             <h1>Upcoming <span>Courses</span></h1>
-            <p class="days">Monday to Saturday</p>
+            <p class="days">Monday to Friday</p>
             <div class="slots">
-                <span>9am – 12pm</span>
+                <span>9 AM – 12 PM</span>
                 <span class="divider"></span>
-                <span>12pm – 3pm</span>
+                <span>12 PM – 3 PM</span>
                 <span class="divider"></span>
-                <span>3pm – 6pm</span>
+                <span>3 PM – 6 PM</span>
             </div>
         </div>
     <div id="pro-data">
@@ -279,7 +279,7 @@
                 <!-- ALL -->
                 <div class="course-section" id="fullstack-all">
                     <h6 class="text-white mt-2 fs-4">What you'll Learn (All Modules)</h6>
-                    <div class="row row-gap-4">
+                    <div class="row row-gap-4 ">
                         <div class="col-lg-3 ">
                             <div class="course-modules px-3 py-3">
                                 <h5 >Frontend Development</h5>
@@ -459,7 +459,7 @@
                 </div>
                 <div class="course-section" id="qa-all">
                     <h6 class="text-white mt-2 fs-4">What You'll Learn (All QA Modules)</h6>
-                    <div class="row">
+                    <div class="row row-gap-4">
                         <!-- QA Basics -->
                         <div class="col-lg-3">
                             <div class="course-modules px-3 py-3">
@@ -643,7 +643,7 @@
                 <!-- ALL -->
                 <div class="course-section" id="uiux-all">
                     <h6 class="text-white mt-2 fs-4">What You'll Learn (All UI/UX Modules)</h6>
-                    <div class="row">
+                    <div class="row row-gap-4">
                         <div class="col-lg-3">
                             <div class="course-modules px-3 py-3">
                                 <h5>UI Design</h5>
@@ -824,7 +824,7 @@
                 <!-- ALL -->
                 <div class="course-section" id="data-all">
                     <h6 class="text-white mt-2 fs-4">What You'll Learn (All Data Analytics Modules)</h6>
-                    <div class="row">
+                    <div class="row row-gap-4">
                         <div class="col-lg-3">
                             <div class="course-modules px-3 py-3">
                                 <h5>Excel for Data Analysis</h5>
