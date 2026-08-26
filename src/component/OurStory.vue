@@ -289,7 +289,10 @@ export default {
     }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 576px) {
+    .about-us p{
+        padding: 0px 20px;
+    }
     .nu-fields {
         margin-bottom: 30px;
     }

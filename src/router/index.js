@@ -35,7 +35,7 @@ let routes = [
   },
   {
     path: "/gallery",
-    name: "Course",
+    name: "Gallery",
     component: Gallery,
   }
 ];
