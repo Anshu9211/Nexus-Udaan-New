@@ -5,6 +5,7 @@
     <Features />
     <FeaturesGrid />
     <CardDetails />
+    <InternshipProgram />
     <JoinUs />
     <OurStory @mapClick="handleMapClick" />
   </div>
@@ -18,6 +19,8 @@ import OurStory from "../component/OurStory.vue";
 import JoinUs from "../component/JoinUs.vue";
 import SocialCard from "../component/socialcard.vue";
 import Slider from "../component/slider/slider.vue"
+import InternshipProgram from "../component/InternshipProgram.vue";
+
 
 export default {
   name: "Home",
@@ -28,7 +31,8 @@ export default {
     OurStory,
     JoinUs,
     SocialCard,
-    Slider
+    Slider,
+    InternshipProgram
   },
   methods: {
     handleMapClick() {

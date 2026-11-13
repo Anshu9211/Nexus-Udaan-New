@@ -7,7 +7,7 @@
         @click="closeMenu">
         <img
           :src="logo"
-          alt="Nexus Udaan Logo"
+          alt="nexus Udaan Logo"
         />
       </router-link>
       <button

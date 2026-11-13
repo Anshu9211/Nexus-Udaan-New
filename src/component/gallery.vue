@@ -1,6 +1,8 @@
 <template>
-  <Loader v-if="isLoading" />
-  <section v-else class="gallery-section" id="gallery">
+  <div class="gallery-page">
+    <Loader />
+
+    <section class="gallery-section" id="gallery">
     <div class="gallery-container">
       <!-- Heading -->
       <div class="gallery-heading ">
@@ -96,6 +98,7 @@
       </button>
     </div>
   </section>
+  </div>
 </template>
 <script>
 import Loader from "../loader/Loader.vue";
@@ -106,7 +109,7 @@ export default {
   name: "Gallery",
   data() {
     return {
-      isLoading: true,
+      // isLoading: true,
       activeCategory: "All",
       selectedImage: null,
       categories: [
@@ -272,32 +275,28 @@ export default {
   beforeUnmount() {
     document.body.style.overflow = "";
   },
- mounted() {
+mounted() {
+  this.$nextTick(() => {
+    let elements = document.querySelectorAll(
+      ".fade-section, .slide-left, .slide-right"
+    );
 
-  // 10 seconds loader
-  setTimeout(() => {
-    this.isLoading = false;
-    // Gallery show hone ke baad animations start
-    this.$nextTick(() => {
-      let elements = document.querySelectorAll(
-        ".fade-section, .slide-left, .slide-right"
-      );
-      let observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("show");
-            }
-          });
-        },
-        {
-          threshold: 0.2,
-        }
-      );
-      elements.forEach((el) => observer.observe(el));
-    });
-  }, 5000);
+    let observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+      }
+    );
 
+    elements.forEach((el) => observer.observe(el));
+  });
 },
 };
 </script>

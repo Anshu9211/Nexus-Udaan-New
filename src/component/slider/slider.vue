@@ -17,7 +17,7 @@
       <div class="overlay"></div>
       <!-- Content -->
       <div class="slide-content">
-        <span class="badge-tag mb-3">Nexus Udaan</span>
+        <span class="badge-tag mb-3">nexus Udaan</span>
         <h1>{{ slide.title }}</h1>
         <div class="img-section">
             <img src="../../assest/IMG/slider1.svg">

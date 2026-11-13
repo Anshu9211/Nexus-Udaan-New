@@ -210,6 +210,14 @@ export default {
 .card-about .about-data{
     padding: 15px;
 }
+.card-about .about-data h3{
+    /* background-color: red; */
+    font-size: 24px;
+    font-weight: bold;
+}
+.card-about .about-data p{
+    font-size: 15.5px;
+}
 .card-1{
     border-bottom: 1px solid #2563eb;
     border-right: 1px solid #2563eb;
