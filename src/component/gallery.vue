@@ -1,5 +1,6 @@
 <template>
-  <section class="gallery-section" id="gallery">
+  <Loader v-if="isLoading" />
+  <section v-else class="gallery-section" id="gallery">
     <div class="gallery-container">
       <!-- Heading -->
       <div class="gallery-heading ">
@@ -7,7 +8,7 @@
         <h1>Our <span>Gallery</span></h1>
         <p>
           Explore memorable moments, student achievements, learning experiences, and inspiring events at
-          <span style="font-size: 35px; color: #3D93D2;" class="slide-right ">nexusUdaan</span>
+          <span style="font-size: 35px; color: #3D93D2;" >nexusUdaan</span>
         </p>
       </div>
       <!-- Filter Buttons -->
@@ -97,10 +98,15 @@
   </section>
 </template>
 <script>
+import Loader from "../loader/Loader.vue";
 export default {
+  components:{
+    Loader
+  },
   name: "Gallery",
   data() {
     return {
+      isLoading: true,
       activeCategory: "All",
       selectedImage: null,
       categories: [
@@ -266,24 +272,33 @@ export default {
   beforeUnmount() {
     document.body.style.overflow = "";
   },
-   mounted() {
-    let elements = document.querySelectorAll(
-      ".fade-section, .slide-left, .slide-right"
-    );
-    let observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-          }
-        });
-      },
-      {
-        threshold: 0.2,
-      }
-    );
-    elements.forEach((el) => observer.observe(el));
-  },
+ mounted() {
+
+  // 10 seconds loader
+  setTimeout(() => {
+    this.isLoading = false;
+    // Gallery show hone ke baad animations start
+    this.$nextTick(() => {
+      let elements = document.querySelectorAll(
+        ".fade-section, .slide-left, .slide-right"
+      );
+      let observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        },
+        {
+          threshold: 0.2,
+        }
+      );
+      elements.forEach((el) => observer.observe(el));
+    });
+  }, 5000);
+
+},
 };
 </script>
 <style scoped>
@@ -295,7 +310,7 @@ export default {
 .gallery-section {
     width: 100%;
     min-height: 100vh;
-    padding: 90px 30px;
+    padding: 46px 30px;
     background: linear-gradient(210deg, #000000 0%, #071a2e 30%, #0b3d91 100%);
 }
 

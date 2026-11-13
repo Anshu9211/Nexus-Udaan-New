@@ -165,6 +165,7 @@
 
 <script>
 import logo from "../../assest/IMG/logo.svg";
+import Loader from "../../loader/Loader.vue";
 export default {
   name: "Header",
   data() {

@@ -98,7 +98,7 @@
           class="footer-main-logo"
         />
         <p>
-          NexusUdaan is an education platform dedicated to
+          nexusUdaan is an education platform dedicated to
           transforming careers through industry-focused learning,
           expert mentorship, and placement-driven programs.
         </p>
@@ -128,15 +128,15 @@
         <h4>Quick Links</h4>
         <ul>
           <li>
-            <router-link to="/" @click="closeMenu">Home</router-link>
+            <router-link to="/">Home</router-link>
           </li>
          <li>
-            <router-link to="/about-us"  target="_blank">
+            <router-link to="/about-us" target="_blank">
               About Us
             </router-link>
           </li>
           <li>
-            <router-link to="/Join-us" target="_blank" @click="closeMenu">
+            <router-link to="/Join-us" target="_blank" >
               Privacy Policy
             </router-link>
           </li>
@@ -146,9 +146,8 @@
             </router-link>
           </li>
         </ul>
-
       </div>
-
+      
       <!-- PROGRAMS -->
       <div class="footer-programs">
         <h4>Popular Programs</h4>
@@ -202,6 +201,8 @@
         </a>
       </div>
     </div>
+
+      
   </div>
 </template>
 
@@ -271,10 +272,15 @@ export default {
     },
   },
 };
-</script>
+</script> 
 
 
+ 
 <style>
+
+ 
+
+
 
 .footer {
   background:linear-gradient(135deg,#000000 0%, #071a2e 60%, #0b3d91 100%);

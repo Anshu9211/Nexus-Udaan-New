@@ -3,17 +3,20 @@ import { nextTick, watch } from "vue";
 import { useRoute } from "vue-router";
 import carddetails from "../component/carddetails.vue";
 
-const route = useRoute();
 
-const showSelectedCourse = async () => {
+let route = useRoute();
+console.log("ROUTE:", route);
+
+let showSelectedCourse = async () => {
+  console.log("FUNCTION RUNNING");
   await nextTick();
+  let course = route.params.course;
+  
+  console.log("COURSE:", course);
+  console.log(course + " Hey Bro !");
+  let startingCards = document.getElementById("pro-det");
+  let allDetails = document.querySelectorAll(".info-details");
 
-  const course = route.params.course;
-
-  const startingCards = document.getElementById("pro-det");
-  const allDetails = document.querySelectorAll(".info-details");
-
-  // Agar /pro-data hai
   if (!course) {
     if (startingCards) {
       startingCards.style.display = "block";
@@ -25,19 +28,15 @@ const showSelectedCourse = async () => {
 
     return;
   }
-
-  // Starting cards hide
   if (startingCards) {
     startingCards.style.display = "none";
   }
 
-  // Saare detailed cards hide
   allDetails.forEach((section) => {
     section.style.display = "none";
   });
-
   // Selected course show
-  const selectedCourse = document.getElementById(course);
+  let selectedCourse = document.getElementById(course);
 
   if (selectedCourse) {
     selectedCourse.style.display = "block";
@@ -50,8 +49,6 @@ const showSelectedCourse = async () => {
     }, 100);
   }
 };
-
-// First load + route change dono handle honge
 watch(
   () => route.params.course,
   () => {

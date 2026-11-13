@@ -1,7 +1,7 @@
 <template>
     <section class="ews-initiative mt-4 " >
         <div class="container">
-            <div class="row align-items-center g-3">
+            <div class="row align-items-center g-5">
                 <!-- IMAGE SIDE -->
                 <div class="col-lg-6">
                     <div class="ews-img-wrap position-relative slide-left">

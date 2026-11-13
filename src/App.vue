@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header />
-     <main class="page-content">
+    <main class="page-content">
       <router-view />
     </main>
     <Footer />
@@ -10,8 +10,7 @@
 
 <script>
 import Footer from "./component/footer/footer.vue";
-import Header from "./component/header/header.vue"
-
+import Header from "./component/header/header.vue";
 export default {
   name: "App",
   components: {
@@ -38,7 +37,7 @@ body,
   
 }
 .page-content {
-  padding-top: 80px;
+  padding-top: 79px;
 }
 
 @media (max-width: 992px) {

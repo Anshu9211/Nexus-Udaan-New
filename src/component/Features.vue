@@ -84,7 +84,7 @@ export default {
 
 
 /* ================================
-   SECTION 2: WHAT MAKES NEXUSUDAAN DIFFERENT
+   SECTION 2: WHAT MAKES NEXUS! DIFFERENT
 ================================ */
 .makes .make-udaan-card1{
     color: white;

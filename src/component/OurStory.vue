@@ -38,7 +38,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="about-img slide-right">
-                                    <img src="https://nexusudaan.in/assets/img/carrerGrowth.webp">
+                                    <img src="../assest/IMG/carrerGrowth.webp">
                                 </div>
                             </div>
                         </div>
