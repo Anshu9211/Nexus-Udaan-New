@@ -1,27 +1,39 @@
 <template>
-  <section class="program">
+  <section class="program ">
     <div class="grid-bg"></div>
     <div class="glow glow-a"></div>
     <div class="glow glow-b"></div>
 
-    <div class="wrap">
+    <div class="wrap ">
+      <!-- PROGRAM SWITCHER -->
+      <div class="switcher" role="tablist" aria-label="Choose program duration">
+        <button
+          v-for="p in programs"
+          :key="p.id"
+          type="button"
+          role="tab"
+          class="switch"
+          :class="{ on: p.id === activeId }"
+          :aria-selected="p.id === activeId"
+          @click="activeId = p.id"
+        >
+          {{ p.label }}
+          <small>{{ p.type }}</small>
+        </button>
+      </div>
+
       <!-- HERO -->
       <header class="hero">
         <div class="hero-text">
-          <span class="pill"><i></i> nexus Udaan career program</span>
+          <span class="pill"><i></i> {{ activeProgram.pill }}</span>
           <h2>
-            Learn today.
-            <em>Lead tomorrow.</em>
+            {{ activeProgram.headline }}
+            <em>{{ activeProgram.headlineAccent }}</em>
           </h2>
-          <p class="lead">
-            A 3-month training and internship program. Learn industry skills,
-            work on live projects and leave with real professional experience.
-          </p>
+          <p class="lead">{{ activeProgram.lead }}</p>
 
           <div class="chips">
-            <span>3 months</span>
-            <span>Online &amp; offline</span>
-            <span>Live projects</span>
+            <span v-for="chip in activeProgram.chips" :key="chip">{{ chip }}</span>
           </div>
 
           <a href="#contact" class="cta">
@@ -34,31 +46,39 @@
           <div class="ring ring-1"></div>
           <div class="ring ring-2"></div>
           <div class="core">
-            <b>90</b>
-            <small>days to grow</small>
+            <b>{{ activeProgram.days }}</b>
+            <small>{{ activeProgram.daysLabel }}</small>
           </div>
-          <span class="tag tag-1">Learn</span>
-          <span class="tag tag-2">Build</span>
-          <span class="tag tag-3">Experience</span>
+          <span class="tag tag-1">{{ activeProgram.tags[0] }}</span>
+          <span class="tag tag-2">{{ activeProgram.tags[1] }}</span>
+          <span class="tag tag-3">{{ activeProgram.tags[2] }}</span>
         </div>
       </header>
 
       <!-- JOURNEY -->
-      <div class="journey">
+      <div class="journey" :style="{ '--n': activeProgram.stages.length }">
         <div class="head">
-          <h3>Your 90-day journey</h3>
-          <p>Three months. Three stages. One step closer to your career.</p>
+          <h3>{{ activeProgram.journeyTitle }}</h3>
+          <p>{{ activeProgram.journeySub }}</p>
         </div>
 
-        <div class="path"><span></span><span></span><span></span></div>
+        <div class="path">
+          <span v-for="(step, index) in activeProgram.stages" :key="'dot-' + activeId + index"></span>
+        </div>
 
         <div class="cards">
-          <article v-for="(step, index) in journey" :key="index" class="card">
+          <article
+            v-for="(step, index) in activeProgram.stages"
+            :key="activeId + '-' + index"
+            class="card"
+          >
             <span class="ghost">0{{ index + 1 }}</span>
             <span class="days">{{ step.days }}</span>
             <h4>{{ step.title }}</h4>
             <p>{{ step.description }}</p>
-            <div class="bar"><i></i></div>
+            <div class="bar">
+              <i :style="{ width: ((index + 1) / activeProgram.stages.length) * 100 + '%' }"></i>
+            </div>
           </article>
         </div>
       </div>
@@ -67,11 +87,11 @@
       <div class="benefits">
         <div class="head">
           <h3>What you will gain</h3>
-          <p>Everything you need to move forward with confidence.</p>
+          <p>{{ activeProgram.benefitsSub }}</p>
         </div>
 
         <div class="bento">
-          <div v-for="(benefit, index) in benefits" :key="index" class="gain">
+          <div v-for="(benefit, index) in activeProgram.benefits" :key="activeId + '-b-' + index" class="gain">
             <span class="tick">
               <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8" /></svg>
             </span>
@@ -81,7 +101,7 @@
 
         <div class="final">
           <div>
-            <h4>Ready to start your 90 days?</h4>
+            <h4>{{ activeProgram.finalTitle }}</h4>
             <p>Seats are limited. Talk to our team and pick your batch.</p>
           </div>
           <a href="#contact" class="cta cta-light">Apply now</a>
@@ -97,36 +117,151 @@ export default {
 
   data() {
     return {
-      journey: [
-        {
-          days: "Days 1–30",
-          title: "Learn",
-          description:
-            "Build your foundation with structured professional training."
-        },
-        {
-          days: "Days 31–60",
-          title: "Build",
-          description:
-            "Develop practical skills through assignments and projects."
-        },
-        {
-          days: "Days 61–90",
-          title: "Experience",
-          description:
-            "Work on assigned internship projects with mentor guidance."
-        }
-      ],
+      activeId: "3",
 
-      benefits: [
-        "Practical project experience",
-        "Industry mentorship",
-        "Portfolio development",
-        "Technical skill development",
-        "Career guidance",
-        "Training and internship certificates"
+      programs: [
+        {
+          id: "3",
+          label: "3 months",
+          type: "Basic course",
+          pill: "nexus Udaan basic course",
+          headline: "Start strong.",
+          headlineAccent: "Get certified.",
+          lead:
+            "A 3-month basic course. Learn the fundamentals, practice with assignments and finish with a course completion certificate.",
+          chips: ["3 months", "Online & offline", "Certificate"],
+          days: "90",
+          daysLabel: "days to certificate",
+          tags: ["Learn", "Practice", "Certify"],
+          journeyTitle: "Your 90-day course",
+          journeySub: "Three months. Three stages. One certificate.",
+          stages: [
+            {
+              days: "Days 1–30",
+              title: "Learn",
+              description: "Understand the basics and fundamentals of your chosen field."
+            },
+            {
+              days: "Days 31–60",
+              title: "Practice",
+              description: "Strengthen your skills with exercises and assignments."
+            },
+            {
+              days: "Days 61–90",
+              title: "Certify",
+              description: "Take the final assessment and receive your certificate."
+            }
+          ],
+          benefitsSub: "A solid foundation and proof that you completed it.",
+          benefits: [
+            "Basic skill foundation",
+            "Structured curriculum",
+            "Practice assignments",
+            "Doubt-clearing support",
+            "Final assessment",
+            "Course completion certificate"
+          ],
+          finalTitle: "Ready to start your 90 days?"
+        },
+        {
+          id: "6",
+          label: "6 months",
+          type: "Trainee + internship",
+          pill: "nexus Udaan career program",
+          headline: "Learn today.",
+          headlineAccent: "Lead tomorrow.",
+          lead:
+            "A 6-month trainee and internship program. Learn industry skills, work on live projects and leave with real professional experience.",
+          chips: ["6 months", "Online & offline", "Live projects"],
+          days: "180",
+          daysLabel: "days to grow",
+          tags: ["Learn", "Build", "Intern"],
+          journeyTitle: "Your 180-day journey",
+          journeySub: "Six months. Three stages. One step closer to your career.",
+          stages: [
+            {
+              days: "Days 1–60",
+              title: "Learn",
+              description: "Build your foundation with structured training as a trainee."
+            },
+            {
+              days: "Days 61–120",
+              title: "Build",
+              description: "Develop practical skills through assignments and projects."
+            },
+            {
+              days: "Days 121–180",
+              title: "Intern",
+              description: "Work on live internship projects with mentor guidance."
+            }
+          ],
+          benefitsSub: "Everything you need to move forward with confidence.",
+          benefits: [
+            "Practical project experience",
+            "Industry mentorship",
+            "Portfolio development",
+            "Technical skill development",
+            "Career guidance",
+            "Trainee and internship certificates"
+          ],
+          finalTitle: "Ready to start your 180 days?"
+        },
+        {
+          id: "12",
+          label: "12 months",
+          type: "Trainee + internship",
+          pill: "nexus Udaan career program",
+          headline: "Learn deeply.",
+          headlineAccent: "Lead for real.",
+          lead:
+            "A 12-month trainee and internship program. Go deep on industry skills, grow through real tasks and complete a full internship on live projects.",
+          chips: ["12 months", "Online & offline", "Live projects"],
+          days: "365",
+          daysLabel: "days to grow",
+          tags: ["Train", "Build", "Intern"],
+          journeyTitle: "Your 12-month journey",
+          journeySub: "One year. Four stages. A complete start to your career.",
+          stages: [
+            {
+              days: "Months 1–3",
+              title: "Foundation",
+              description: "Learn the core concepts through structured training."
+            },
+            {
+              days: "Months 4–6",
+              title: "Advance",
+              description: "Go deeper with advanced skills, assignments and projects."
+            },
+            {
+              days: "Months 7–9",
+              title: "Trainee",
+              description: "Handle real tasks as a trainee with regular feedback."
+            },
+            {
+              days: "Months 10–12",
+              title: "Intern",
+              description: "Complete a full internship on live projects with mentor guidance."
+            }
+          ],
+          benefitsSub: "The most complete path from learning to professional experience.",
+          benefits: [
+            "In-depth project experience",
+            "Long-term industry mentorship",
+            "Strong portfolio",
+            "Advanced technical skills",
+            "Career guidance",
+            "Trainee and internship certificates"
+          ],
+          finalTitle: "Ready to start your year?"
+        }
       ]
     };
+  },
+
+  computed: {
+    activeProgram() {
+      return this.programs.find((p) => p.id === this.activeId) || this.programs[0];
+    }
   }
 };
 </script>
@@ -184,6 +319,49 @@ export default {
 }
 
 .wrap { max-width: 1200px; margin: 0 auto; }
+
+/* SWITCHER */
+
+.switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.switch {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: 12px 22px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--ink);
+  background: rgba(9, 41, 88, 0.55);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.25s, border-color 0.25s, color 0.25s;
+}
+
+.switch small {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.switch:hover { border-color: rgba(79, 195, 255, 0.6); }
+
+.switch.on {
+  color: var(--bg);
+  background: linear-gradient(90deg, var(--cyan), var(--teal));
+  border-color: transparent;
+}
+
+.switch.on small { color: rgba(5, 19, 33, 0.75); }
+.switch:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
 
 /* HERO */
 
@@ -345,7 +523,7 @@ export default {
 }
 
 .core b {
-  font-size: clamp(70px, 11vw, 120px);
+  font-size: clamp(60px, 10vw, 110px);
   font-weight: 800;
   line-height: 0.9;
   letter-spacing: -0.05em;
@@ -355,7 +533,7 @@ export default {
   color: transparent;
 }
 
-.core small { margin-top: 8px; font-size: 14px; color: var(--muted); }
+.core small { margin-top: 8px; font-size: 14px; color: var(--muted); text-align: center; }
 
 .tag {
   position: absolute;
@@ -369,7 +547,6 @@ export default {
   backdrop-filter: blur(8px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
   animation: float 4s ease-in-out infinite;
-  
 }
 
 .tag-1 { top: 6%; left: -2%; }
@@ -391,21 +568,21 @@ export default {
 
 /* JOURNEY */
 
-.journey { margin-top: 50px; }
+.journey { --n: 3; margin-top: 50px; }
 
 .path {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(var(--n), 1fr);
   margin-bottom: -9px;
-  padding: 0 calc(100% / 6 - 9px);
+  padding: 0 calc(100% / (var(--n) * 2) - 9px);
 }
 
 .path::before {
   content: "";
   position: absolute;
-  left: calc(100% / 6);
-  right: calc(100% / 6);
+  left: calc(100% / (var(--n) * 2));
+  right: calc(100% / (var(--n) * 2));
   top: 8px;
   height: 2px;
   background: linear-gradient(90deg, var(--cyan), var(--teal));
@@ -427,7 +604,7 @@ export default {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(var(--n), 1fr);
   gap: 24px;
   padding-top: 34px;
 }
@@ -509,14 +686,11 @@ export default {
 .bar i {
   display: block;
   height: 100%;
-  width: 33%;
   border-radius: 4px;
   background: linear-gradient(90deg, var(--cyan), var(--teal));
   transition: width 0.5s;
 }
 
-.card:nth-child(2) .bar i { width: 66%; }
-.card:nth-child(3) .bar i { width: 100%; }
 .card:hover .bar i { box-shadow: 0 0 14px var(--teal); }
 
 /* BENEFITS */
@@ -580,7 +754,7 @@ export default {
     radial-gradient(500px 240px at 100% 0%, rgba(46, 230, 197, 0.3), transparent 70%),
     linear-gradient(120deg, #0c3d85, var(--panel));
   border: 1px solid rgba(79, 195, 255, 0.4);
-  display: none;
+  display: none; /* remove this line to show the Apply block */
 }
 
 .final h4 { margin: 0 0 8px; font-size: clamp(24px, 3vw, 34px); font-weight: 800; letter-spacing: -0.02em; }
@@ -601,6 +775,7 @@ export default {
 @keyframes ping { 70% { box-shadow: 0 0 0 10px rgba(46, 230, 197, 0); } 100% { box-shadow: 0 0 0 0 rgba(46, 230, 197, 0); } }
 
 /* RESPONSIVE */
+
 
 @media (max-width: 960px) {
   .program { padding: 80px 6%; }
