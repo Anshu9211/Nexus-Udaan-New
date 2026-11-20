@@ -78,12 +78,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="right-data">
-                            <h4 class="mb-4">4,500<span class="text-muted">/month</span></h4>
-                            <button>Apply Now <i class="bi bi-arrow-right"></i></button>
-                        </div>
+                   <div class="col-lg-3">
+                    <div class="right-data">
+                        <h4 class="mb-4" v-if="selectedDuration !== null">
+                            ₹{{ courseFees[selectedDuration] }}
+                            <span class="text-muted">/month</span>
+                        </h4>
+                        <button @click="showApplyModal = true">
+                            Apply Now <i class="bi bi-arrow-right"></i>
+                        </button>
                     </div>
+                </div>
                 </div>
                 <div class="container info-detail" id="basic-section">
                     <!-- Buttons -->
@@ -261,12 +266,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="right-data">
-                            <h4  class="mb-4">4,500<span class="text-muted">/month</span></h4>
-                            <button>Apply Now <i class="bi bi-arrow-right"></i></button>
-                        </div>
+                   <div class="col-lg-3">
+                    <div class="right-data">
+                        <h4 class="mb-4" v-if="selectedDuration !== null">
+                            ₹{{ courseFees[selectedCourse][selectedDuration] }}
+                            <span class="text-muted">/month</span>
+                        </h4>
+                        <button @click="showApplyModal = true">
+                            Apply Now <i class="bi bi-arrow-right"></i>
+                        </button>
                     </div>
+                </div>
                 </div>           
                 <div class="container info-detail" id="fullstack-section">
                     <!-- Buttons -->
@@ -443,12 +453,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="right-data">
-                            <h4 class="mb-4">3,500<span class="text-muted">/month</span></h4>
-                            <button>Apply Now <i class="bi bi-arrow-right"></i></button>
-                        </div>
+                <div class="col-lg-3">
+                    <div class="right-data">
+                        <h4 class="mb-4" v-if="selectedDuration !== null">
+                            ₹{{ courseFees[selectedCourse][selectedDuration] }}
+                            <span class="text-muted">/month</span>
+                        </h4>
+                        <button @click="showApplyModal = true">
+                            Apply Now <i class="bi bi-arrow-right"></i>
+                        </button>
                     </div>
+                </div>
                 </div>
                 <div class="container-fluid" id="qa-section">
                     <div class=" my-3 commn">
@@ -626,12 +641,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="right-data">
-                            <h4 class="mb-4">4,000<span class="text-muted">/month</span></h4>
-                            <button>Apply Now <i class="bi bi-arrow-right"></i></button>
-                        </div>
+                  <div class="col-lg-3">
+                    <div class="right-data">
+                        <h4 class="mb-4" v-if="selectedDuration !== null">
+                            ₹{{ courseFees[selectedCourse][selectedDuration] }}
+                            <span class="text-muted">/month</span>
+                        </h4>
+                        <button @click="showApplyModal = true">
+                            Apply Now <i class="bi bi-arrow-right"></i>
+                        </button>
                     </div>
+                </div>
                 </div>
                 <div class="container-fluid" id="uiux-section">
                     <div class=" my-3 commn">
@@ -807,12 +827,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="right-data">
-                            <h4 class="mb-4">4,200<span class="text-muted">/month</span></h4>
-                            <button>Apply Now <i class="bi bi-arrow-right"></i></button>
-                        </div>
+                   <div class="col-lg-3">
+                    <div class="right-data">
+                        <h4 class="mb-4" v-if="selectedDuration !== null">
+                            ₹{{ courseFees[selectedCourse][selectedDuration] }}
+                            <span class="text-muted">/month</span>
+                        </h4>
+                        <button @click="showApplyModal = true">
+                            Apply Now <i class="bi bi-arrow-right"></i>
+                        </button>
                     </div>
+                </div>
                 </div>
                 <div class="container-fluid" id="data-section">
                     <div class=" my-3 commn">
@@ -987,12 +1012,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="right-data">
-                            <h4 class="mb-4">4,500<span class="text-muted">/month</span></h4>
-                            <button>Apply Now <i class="bi bi-arrow-right"></i></button>
-                        </div>
+                   <div class="col-lg-3">
+                    <div class="right-data">
+                        <h4 class="mb-4" v-if="selectedDuration !== null">
+                            ₹{{ courseFees[selectedCourse][selectedDuration] }}
+                            <span class="text-muted">/month</span>
+                        </h4>
+                        <button @click="showApplyModal = true">
+                            Apply Now <i class="bi bi-arrow-right"></i>
+                        </button>
                     </div>
+                </div>
                 </div>
                 <div class="container info-detail" id="ba-section">
                     <!-- Buttons -->
@@ -1173,8 +1203,13 @@
                     </div>
                     <div class="col-lg-3">
                         <div class="right-data">
-                            <h4 class="mb-4">4,500<span class="text-muted">/month</span></h4>
-                            <button>Apply Now <i class="bi bi-arrow-right"></i></button>
+                            <h4 class="mb-4" v-if="selectedDuration !== null">
+                                ₹{{ courseFees[selectedCourse][selectedDuration] }}
+                                <span class="text-muted">/month</span>
+                            </h4>
+                            <button @click="showApplyModal = true">
+                                Apply Now <i class="bi bi-arrow-right"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -1353,8 +1388,13 @@
                     </div>
                     <div class="col-lg-3">
                         <div class="right-data">
-                            <h4 class="mb-4">4,500<span class="text-muted">/month</span></h4>
-                            <button>Apply Now <i class="bi bi-arrow-right"></i></button>
+                            <h4 class="mb-4" v-if="selectedDuration !== null">
+                            ₹{{ courseFees[selectedCourse][selectedDuration] }}
+                            <span class="text-muted">/month</span>
+                            </h4>
+                            <button @click="showApplyModal = true">
+                            Apply Now <i class="bi bi-arrow-right"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -1533,8 +1573,13 @@
                     </div>
                     <div class="col-lg-3">
                         <div class="right-data">
-                            <h4 class="mb-4">4,500<span class="text-muted">/month</span></h4>
-                            <button>Apply Now <i class="bi bi-arrow-right"></i></button>
+                            <h4 class="mb-4" v-if="selectedDuration !== null">
+                            ₹{{ courseFees[selectedCourse][selectedDuration] }}
+                            <span class="text-muted">/month</span>
+                            </h4>
+                            <button @click="showApplyModal = true">
+                            Apply Now <i class="bi bi-arrow-right"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -1713,8 +1758,13 @@
                     </div>
                     <div class="col-lg-3">
                         <div class="right-data">
-                            <h4 class="mb-4">4,500<span class="text-muted">/month</span></h4>
-                            <button>Apply Now <i class="bi bi-arrow-right"></i></button>
+                            <h4 class="mb-4" v-if="selectedDuration !== null">
+                            ₹{{ courseFees[selectedCourse][selectedDuration] }}
+                            <span class="text-muted">/month</span>
+                            </h4>
+                            <button @click="showApplyModal = true">
+                            Apply Now <i class="bi bi-arrow-right"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -1922,76 +1972,560 @@
                 </div>
             </div>
         </section>
-        <!-- BUIL UP START -->
+        <!-- Apply Now Modal -->
+        <transition name="modal-fade">
+            <div
+            v-if="showApplyModal"
+            class="apply-overlay"
+            @click.self="showApplyModal = false"
+            >
+            <div class="apply-modal">
+            <!-- Header -->
+            <div class="apply-header">
+                <span>LET'S BUILD YOUR FUTURE</span>
+                <button
+                class="close-modal"
+                @click="showApplyModal = false"
+                >
+                &times;
+                </button>
+            </div>
+            <!-- Body -->
+            <div class="apply-body">
+                <div class="apply-icon">
+                <i class="bi bi-mortarboard"></i>
+                </div>
+                <span class="apply-tag">NEXUS UDAAN CAREER PROGRAM</span>
+                <h2>
+                Your next chapter
+                <span>starts here.</span>
+                </h2>
+                <p class="apply-description">
+                Ready to turn your ambitions into real-world skills?
+                Take the first step towards your future with Nexus Udaan.
+                </p>
+                <!-- Program Details -->
+                
+                <form @submit.prevent="submitApplication">
+                    <div class="form-group">
+                        <label>YOUR NAME</label>
+                        <input
+                            type="text"
+                            v-model="applicant.name"
+                            placeholder="Enter your full name"
+                            @input="validateName"
+                            required
+                        >
+
+                        <small v-if="nameError" class="validation-error">
+                            {{ nameError }}
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label>EMAIL ADDRESS</label>
+                        <input
+                            type="email"
+                            v-model="applicant.email"
+                            placeholder="Enter your email"
+                            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                            title="Please enter a valid email address (e.g. example@gmail.com)"
+                            required
+                        >
+                        <small v-if="emailError" class="validation-error">
+                            {{ emailError }}
+                        </small>
+                    </div>
+                  <div class="form-group">
+                    <label>PHONE NUMBER</label>
+                    <input
+                        type="tel"
+                        v-model="applicant.phone"
+                        placeholder="Enter your phone number"
+                        maxlength="10"
+                        inputmode="numeric"
+                        @input="validatePhone"
+                        required
+                    >
+                    <small v-if="phoneError" class="validation-error">
+                        {{ phoneError }}
+                    </small>
+                </div>
+                    <button type="submit" class="submit-application">Start Your Journey<i class="bi bi-arrow-up-right"></i></button>
+                </form>
+                <p class="apply-footer">
+                <i class="bi bi-shield-check"></i>
+                Your information is safe with us.
+                </p>
+            </div>
+        </div>
+        </div>
+        </transition>
 </template>
+
 
 <script>
 export default {
-  methods: {
-    showCourse(type) {
-      // Hide all sections
-      document.querySelectorAll(".course-section").forEach(section => {
-        section.style.display = "none";
-      });
-      let active = document.getElementById(type);
-      if (active) {
-        active.style.display = "block";
-      }
-    }
-  },
+    data() {
+        return {
+            showApplyModal: false,
 
-  mounted() {
-    // Animation
-    let elements = document.querySelectorAll(
-      ".fade-section, .slide-left, .slide-right"
-    );
-    let observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-          }
-        });
-      },
-      {
-        threshold: 0.2,
-      }
-    );
-    elements.forEach((el) => observer.observe(el));
-    [
-      "basic-all",
-      "fullstack-all",
-      "qa-all",
-      "uiux-all",
-      "data-all",
-      "ba-all",
-      "cloud-all",
-      "mob-all",
-      "ai-all",
-      "comm-all",
-    ].forEach((id) => {
-      let el = document.getElementById(id);
-      if (el) {
-        el.style.display = "block";
-      }
-    });
-    document.querySelectorAll(".view-btn").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        let course = btn.dataset.course;
-        document.querySelectorAll(".info-details").forEach((section) => {
-          section.style.display = "none";
-        });
-        let activeSection = document.getElementById(course);
-        if (activeSection) {
-          activeSection.style.display = "block";
+            applicant: {
+                name: "",
+                email: "",
+                phone: ""
+            },
+            nameError: "",
+            emailError: "",
+            phoneError: "",
+            courseFees: {
+                basic: {
+                    3: 1990,
+                    6: 1800,
+                    12: 1500
+                },
+
+                fullstack: {
+                    3: 4990,
+                    6: 4500,
+                    12: 4000
+                },
+
+                qa: {
+                    3: 3300,
+                    6: 3500,
+                    12: 3000
+                },
+
+                uiux: {
+                    3: 3390,
+                    6: 3500,
+                    12: 3000
+                },
+
+                data: {
+                    3: 4500,
+                    6: 4000,
+                    12: 3500
+                },
+
+                ba: {
+                    3: 3390,
+                    6: 5000,
+                    12:4500
+                },
+
+                cloud: {
+                    3: 6500,
+                    6: 6000,
+                    12: 5500
+                },
+
+                mob: {
+                    3: 4990,
+                    6: 4500,
+                    12: 4000
+                },
+
+                ai: {
+                    3: 5900,
+                    6: 5400,
+                    12: 4900
+                },
+
+                comm: {
+                    3: 3500,
+                    6: 3000,
+                    12: 2500
+                }
+            },
+
+            selectedCourse: "",
+            selectedDuration: null
+        };
+    },
+
+    methods: {
+
+        // NAME VALIDATION
+        validateName() {
+            const value = this.applicant.name;
+
+            if (/[^A-Za-z ]/.test(value)) {
+                this.nameError = "Only alphabets are allowed!";
+                this.applicant.name = value.replace(/[^A-Za-z ]/g, "");
+            } else {
+                this.nameError = "";
+            }
+        },
+        validateEmail() {
+            const value = this.applicant.email;
+            const emailRegex =
+                /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (value && !emailRegex.test(value)) {
+                this.emailError = "Please enter a valid email address!";
+            } else {
+                this.emailError = "";
+            }
+        },
+        validatePhone() {
+            let value = this.applicant.phone;
+            value = value.replace(/[^0-9]/g, "").slice(0, 10);
+            this.applicant.phone = value;
+            if (value.length > 0 && !/^[6-9]/.test(value)) {
+                this.phoneError ="Mobile number must start with 6, 7, 8 or 9!";
+            }
+            else if (value.length > 0 && value.length < 10) {
+                this.phoneError ="Please enter a complete 10-digit mobile number!";
+            }
+            else {
+                this.phoneError = "";
+            }
+        },
+        showCourse(type) {
+            const course = type.split("-")[0];
+            const duration = type.match(/-(3|6|12)$/);
+            this.selectedCourse = course;
+            this.selectedDuration = duration
+                ? Number(duration[1])
+                : null;
+            document.querySelectorAll(".course-section").forEach(section => {
+                section.style.display = "none";
+            });
+
+            let active = document.getElementById(type);
+            if (active) {
+                active.style.display = "block";
+            }
+        },
+        submitApplication() { 
+            this.validateName();
+            this.validateEmail();
+            this.validatePhone();
+
+            const nameValid =
+                /^[A-Za-z ]+$/.test(this.applicant.name.trim());
+
+            const emailValid =
+                /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(this.applicant.email);
+
+            const phoneValid =
+                /^[6-9][0-9]{9}$/.test(this.applicant.phone);
+
+            if (!nameValid || !emailValid || !phoneValid) {
+                return;
+            }
+
+            const subject = encodeURIComponent(
+                "New Program Application - Nexus Udaan"
+            );
+
+            const body = encodeURIComponent(
+                `Name: ${this.applicant.name}
+Email: ${this.applicant.email}
+Phone: ${this.applicant.phone}`
+            );
+            window.location.href =
+                `mailto:contact@nexusudaan.in?subject=${subject}&body=${body}`;
+
+            this.showApplyModal = false;
         }
-      });
-    });
-  }
+    },
+
+    mounted() {
+        let elements = document.querySelectorAll(
+            ".fade-section, .slide-left, .slide-right"
+        );
+        let observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            },
+            {
+                threshold: 0.2,
+            }
+        );
+
+        elements.forEach((el) => observer.observe(el));
+
+        [
+            "basic-all",
+            "fullstack-all",
+            "qa-all",
+            "uiux-all",
+            "data-all",
+            "ba-all",
+            "cloud-all",
+            "mob-all",
+            "ai-all",
+            "comm-all",
+        ].forEach((id) => {
+            let el = document.getElementById(id);
+
+            if (el) {
+                el.style.display = "block";
+            }
+        });
+
+        document.querySelectorAll(".view-btn").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                let course = btn.dataset.course;
+
+                document.querySelectorAll(".info-details").forEach((section) => {
+                    section.style.display = "none";
+                });
+
+                let activeSection = document.getElementById(course);
+
+                if (activeSection) {
+                    activeSection.style.display = "block";
+                }
+            });
+        });
+    }
 };
 </script>
 
 <style>
+
+.validation-error {
+    color: #ff4d4f;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+}
+/* Overlay */
+.apply-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(9px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Modal */
+.apply-modal {
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: linear-gradient(145deg, #0c1721, #071019);
+  border: 1px solid rgba(255,255,255,0.13);
+  border-radius: 22px;
+  box-shadow: 0 25px 100px rgba(0,0,0,0.6);
+}
+
+/* Scrollbar */
+.apply-modal::-webkit-scrollbar {
+  width: 6px;
+}
+
+.apply-modal::-webkit-scrollbar-thumb {
+  background: #087dcc;
+  border-radius: 10px;
+}
+
+/* Header */
+.apply-header {
+  background: #087dcc;
+  padding: 22px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.apply-header span {
+  color: white;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.close-modal {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.5);
+  background: transparent;
+  color: white;
+  font-size: 27px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-modal:hover {
+  background: white;
+  color: #087dcc;
+  transform: rotate(90deg);
+}
+
+/* Body */
+.apply-body {
+  padding: 35px 40px;
+}
+
+.apply-icon {
+  width: 58px;
+  height: 58px;
+  border: 1px solid rgba(0,151,255,0.4);
+  background: rgba(0,151,255,0.08);
+  border-radius: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #20a8ff;
+  font-size: 27px;
+  margin-bottom: 28px;
+}
+
+.apply-tag {
+  color: #20a8ff;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+
+.apply-body h2 {
+  color: white;
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 15px 0;
+}
+
+.apply-body h2 span {
+  color: #168fe0;
+}
+
+.apply-description {
+  color: #aebbc5;
+  line-height: 1.8;
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+ 
+/* Form */
+.form-group {
+  margin-bottom: 19px;
+}
+
+.form-group label {
+  display: block;
+  color: #aabac8;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 9px;
+}
+
+.form-group input {
+  width: 100%;
+  background: #101f2b;
+  border: 1px solid #263d4e;
+  border-radius: 10px;
+  padding: 15px;
+  color: white;
+  outline: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.form-group input::placeholder {
+  color: #718493;
+}
+
+.form-group input:focus {
+  border-color: #168fe0;
+  box-shadow: 0 0 0 3px rgba(22,143,224,0.12);
+}
+
+/* Submit Button */
+.submit-application {
+  width: 100%;
+  padding: 17px;
+  background: #087dcc;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-application:hover {
+  background: #1599ee;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,125,204,0.25);
+}
+
+.apply-footer {
+  text-align: center;
+  color: #81919d;
+  font-size: 12px;
+  margin: 20px 0 0;
+}
+
+.apply-footer i {
+  color: #20a8ff;
+  margin-right: 5px;
+}
+
+/* Animation */
+.modal-fade-enter-active,
+.modal-fade-leave-active {
+  transition: 0.3s ease;
+}
+
+.modal-fade-enter-from,
+.modal-fade-leave-to {
+  opacity: 0;
+}
+
+.modal-fade-enter-from .apply-modal {
+  transform: translateY(30px) scale(0.96);
+}
+
+.apply-modal {
+  transition: transform 0.3s ease;
+}
+
+/* Mobile */
+@media(max-width: 576px) {
+  .apply-overlay {
+    padding: 10px;
+  }
+
+  .apply-modal {
+    max-width: 100%;
+    max-height: 92vh;
+    border-radius: 17px;
+  }
+
+  .apply-body {
+    padding: 27px 22px;
+  }
+
+  .apply-body h2 {
+    font-size: 29px;
+  }
+
+  .apply-description {
+    font-size: 14px;
+  }
+}
   .banner {
     width: 100%;
     min-height: 220px;

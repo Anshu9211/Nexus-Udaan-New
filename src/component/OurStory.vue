@@ -30,7 +30,6 @@
                                 <div class="demo bottom-section slide-left">
                                     <div class="map-data" id="mapCard">
                                         <a href="https://maps.app.goo.gl/oHSaKRu6japmxdXr6" target="_blank" rel="noopener" @click="sendMapClick">
-                                            <!-- swap this src back to: assets/IMG/nexus tower.webp -->
                                             <img src="../assest/IMG/nexus tower.webp" alt="nexusTower location">
                                         </a>
                                     </div>
@@ -100,27 +99,22 @@ export default {
    SECTION 7: ABOUT US
 ================================ */
 .about-us h1{
-    /* background-color: red; */
     font-weight: 400;
 }
 .bottom-section .about-img img{
-    /* background-color: red; */
-    width: 90%;
-    height: 380px;
+    width: 100%;
+    height: auto;
     display: flex;
     justify-content: center;
-    /* align-items: center; */
-    margin: auto;
-    /* object-fit: cover; */
+    object-fit: contain;
 
 }
 .bottom-section .about-img {
     width: 100%;
-    /* background-color: red; */
+   
 }
 .bottom-section .map-data{
     width: 100%;
-    /* background-color: red; */
 } 
 .demo{ 
     max-width: 560px;
@@ -132,7 +126,6 @@ export default {
     width: 100%;
     height: 480px;
     object-fit: cover;
-    /* background-color: red; */
 }
 .bottom-section .map-data a {
     position: relative;
@@ -188,7 +181,6 @@ export default {
     width: 100%;
     height: 480px;
     object-fit: cover;
-    /* display: block; */
     transition: transform 0.6s ease, filter 0.6s ease;
 
  }
@@ -314,4 +306,7 @@ export default {
     opacity: 1;
     transform: none;
 }
+ .about-img img{
+    object-fit: contain;
+ }
 </style>
